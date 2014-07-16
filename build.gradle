@@ -1,0 +1,10 @@
+version = "1.7.2-1.4.0"
+sourceSets.main {
+    java {
+	srcDirs project.projectDir.getPath() exclude ("bin/**", "build*",".gradle/**","eclipse/**")
+	}
+    resources {
+	srcDirs '/resources' exclude ("bin/**", "build*",".gradle/**","eclipse/**")
+	}
+} 
+
