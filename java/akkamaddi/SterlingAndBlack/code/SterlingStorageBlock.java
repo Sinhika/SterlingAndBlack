@@ -6,8 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.MathHelper;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.world.World;
 
 public class SterlingStorageBlock extends Block
@@ -36,7 +35,7 @@ public class SterlingStorageBlock extends Block
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister)
+    public void registerBlockIcons(IIconRegister iconRegister)
     {
         this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
     }

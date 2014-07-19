@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
-import alexndr.SimpleOres.api.content.SimpleArmor;
 import alexndr.SimpleOres.api.content.SimpleAxe;
 import alexndr.SimpleOres.api.content.SimpleHoe;
 import alexndr.SimpleOres.api.content.SimpleIngot;
@@ -118,11 +117,7 @@ public class SterlingAndBlackCore
      */
     @EventHandler 
     public void preInit(FMLPreInitializationEvent event)
-    {
-        // Stub Method
-        proxy.registerTickHandler();
-        // MinecraftForge.EVENT_BUS.register(new HandlerArmor());
-        
+    {       
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
         MakeMeSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Me Sparkle, false or true", false).getBoolean(false);
@@ -140,10 +135,12 @@ public class SterlingAndBlackCore
         sterlingSteelAxe = new SimpleAxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelAxe");
         sterlingSteelPickaxe = new SimplePickaxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelPickaxe");
         sterlingSteelHoe = new SimpleHoe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHoe");
-        sterlingSteelHelm = new SimpleArmor(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
-        sterlingSteelChest = new SimpleArmor(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
-        sterlingSteelLegs = new SimpleArmor(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
-        sterlingSteelBoots = new SimpleArmor( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
+
+        // subclass armor
+        sterlingSteelHelm = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
+        sterlingSteelChest = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
+        sterlingSteelLegs = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
+        sterlingSteelBoots = new SimpleArmorWithEffect( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
        
         blackSilverIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverIngot");
         smallBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("smallBlackSilverChunkItem");
@@ -154,17 +151,19 @@ public class SterlingAndBlackCore
         blackSilverAxe = new SimpleAxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverAxe");
         blackSilverPickaxe = new SimplePickaxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverPickaxe");
         blackSilverHoe = new SimpleHoe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHoe");
-        blackSilverHelm = new SimpleArmor(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
-        blackSilverChest = new SimpleArmor(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
-        blackSilverLegs = new SimpleArmor(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
-        blackSilverBoots = new SimpleArmor(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
+        
+       // subclass armor
+        blackSilverHelm = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
+        blackSilverChest = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
+        blackSilverLegs = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
+        blackSilverBoots = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
        
         toolSterlingSteel.customCraftingMaterial = SterlingAndBlackCore.sterlingSteelIngot;
         toolBlackSilver.customCraftingMaterial = SterlingAndBlackCore.blackSilverIngot;
         armorSterlingSteel.customCraftingMaterial = SterlingAndBlackCore.sterlingSteelIngot;
         armorBlackSilver.customCraftingMaterial = SterlingAndBlackCore.blackSilverIngot;
 
-        // define blocks
+         // define blocks
         blockSterlingSteel = new SterlingStorageBlock(Material.iron, "sterlingandblack");
         blockBlackSilver = new BlackStorageBlock(Material.iron, "sterlingandblack");
         

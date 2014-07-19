@@ -1,11 +1,11 @@
 package akkamaddi.SterlingAndBlack.code;
 
-import java.util.Random;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import alexndr.SimpleOres.core.helpers.RandomRange;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 public class HandlerJoinWorld
@@ -18,7 +18,7 @@ public class HandlerJoinWorld
     /**
      * This class allows zombies and skeletons to spawn holding/wearing SimpleOres items.
      */
-    @ForgeSubscribe
+    @SubscribeEvent
     public void EntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
         rand = Math.random();
@@ -210,13 +210,5 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverHoe));
             }
         }
-    }
-}
-
-class RandomRange extends Random
-{
-    public int nextInt(int min, int max)
-    {
-        return nextInt(max - min + 1) + min;
     }
 }

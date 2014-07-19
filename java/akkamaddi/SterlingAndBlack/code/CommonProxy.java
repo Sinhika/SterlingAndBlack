@@ -1,8 +1,5 @@
 package akkamaddi.SterlingAndBlack.code;
 
-import cpw.mods.fml.common.registry.TickRegistry;
-import cpw.mods.fml.relauncher.Side;
-
 public class CommonProxy
 {
     // Client stuff
@@ -16,9 +13,9 @@ public class CommonProxy
         return 0;
     }
 
-    public void registerTickHandler()
-    {
-        // TODO Auto-generated method stub
-        TickRegistry.registerTickHandler(new HandlerArmor(), Side.SERVER);
-    }
+//    public void registerTickHandler()
+//    {
+//        // TODO Auto-generated method stub
+//        TickRegistry.registerTickHandler(new HandlerArmor(), Side.SERVER);
+//    }
 }

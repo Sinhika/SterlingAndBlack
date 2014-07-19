@@ -3,20 +3,22 @@ package akkamaddi.SterlingAndBlack.code;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntityDamageSource;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 public class WerewolfHandler
 {
-    private final Class werewolf;
+    @SuppressWarnings("rawtypes")
+	private final Class werewolf;
     private Method isHumanForm;
 
-    public WerewolfHandler() throws ClassNotFoundException
+    @SuppressWarnings("unchecked")
+	public WerewolfHandler() throws ClassNotFoundException
     {
         werewolf = Class.forName("drzhark.mocreatures.entity.monster.MoCEntityWerewolf");
 
@@ -54,7 +56,7 @@ public class WerewolfHandler
         }
     }
 
-    @ForgeSubscribe public void onLivingHurt(LivingHurtEvent event)
+    @SubscribeEvent public void onLivingHurt(LivingHurtEvent event)
     {
         if (!isWerewolfInWolfForm(event.entityLiving))
         {
@@ -73,23 +75,23 @@ public class WerewolfHandler
 
         Item item = stack.getItem();
 
-        if (item.itemID ==  SterlingAndBlackCore.blackSilverHoe.itemID)
+        if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverHoe.getUnlocalizedName())
         {
             event.ammount = 6;
         }
-        else if (item.itemID ==  SterlingAndBlackCore.blackSilverShovel.itemID)
+        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverShovel.getUnlocalizedName())
         {
             event.ammount = 7;
         }
-        else if (item.itemID ==  SterlingAndBlackCore.blackSilverPickaxe.itemID)
+        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverPickaxe.getUnlocalizedName())
         {
             event.ammount = 8;
         }
-        else if (item.itemID ==  SterlingAndBlackCore.blackSilverAxe.itemID)
+        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverAxe.getUnlocalizedName())
         {
             event.ammount = 9;
         }
-        else if (item.itemID ==  SterlingAndBlackCore.blackSilverSword.itemID)
+        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverSword.getUnlocalizedName())
         {
             event.ammount = 10;
         }
