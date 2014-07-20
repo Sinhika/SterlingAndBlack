@@ -27,7 +27,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.2-1.4.0", 
-	dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; required-after:onlysilver")
+	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:onlysilver")
 
 public class SterlingAndBlackCore
 {
