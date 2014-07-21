@@ -1,6 +1,7 @@
 package akkamaddi.SterlingAndBlack.code;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -34,49 +35,56 @@ public class SimpleArmorWithEffect extends SimpleArmor
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) 
 	{
+        ItemStack chest = null, legs = null, boots = null, helm = null;
+        
+        // search armor list for the different pieces.
+        for (int i=0; i < 4; i++) {
+        	if ( player.getCurrentArmor(i) == null) {
+        		continue;
+        	}
+        	ItemArmor armorPiece = (ItemArmor) player.getCurrentArmor(i).getItem();
+        	if (armorPiece.armorType == 0 ) {
+        		helm = player.getCurrentArmor(i);
+        	} 
+        	else if (armorPiece.armorType == 1) {
+        		chest = player.getCurrentArmor(i);
+        	}
+        	else if (armorPiece.armorType == 2 ) {
+        		legs = player.getCurrentArmor(i);
+        	}
+        	else if (armorPiece.armorType == 3) {
+        		boots = player.getCurrentArmor(i);
+        	}
+        } // end-for
+        
 		// Sterling Steel chest plate, leggings, and boots together grants the ability Jump 1
-		 if (player.getCurrentArmor(3) != null && player.getCurrentArmor(2) != null 
-				 && player.getCurrentArmor(1) != null)
+		 if (boots != null && legs != null && chest != null)
 	        {
-	            ItemStack chest = player.getCurrentArmor(1);
-	            ItemStack legs = player.getCurrentArmor(2);
-	            ItemStack boots = player.getCurrentArmor(3);
 
-	            if ((chest.getItem().getUnlocalizedName() == 
-	            		SterlingAndBlackCore.sterlingSteelChest.getUnlocalizedName()) 
-	            	&& (legs.getItem().getUnlocalizedName() == SterlingAndBlackCore.sterlingSteelLegs.getUnlocalizedName()) 
-	            	&& boots.getItem().getUnlocalizedName() == SterlingAndBlackCore.sterlingSteelBoots.getUnlocalizedName())
+	            if ((chest.getItem() == SterlingAndBlackCore.sterlingSteelChest) 
+	            	&& (legs.getItem() == SterlingAndBlackCore.sterlingSteelLegs) 
+	            	&& (boots.getItem() == SterlingAndBlackCore.sterlingSteelBoots))
 	            {
 	                player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 40, 0));
 	            }
 	        }
 		 
 		 // Sterling Steel helmet, chest plate, and leggings together grants the magical (potion) ability Speed 1
-	       if (player.getCurrentArmor(0) != null && player.getCurrentArmor(1) != null 
-	        		&& player.getCurrentArmor(2) != null)
+	       if (helm != null && chest != null && legs != null)
 	        {
-	            ItemStack helmet = player.getCurrentArmor(0);
-	            ItemStack chest = player.getCurrentArmor(1);
-	            ItemStack legs = player.getCurrentArmor(2);
-
-	            if (helmet.getItem() == SterlingAndBlackCore.sterlingSteelHelm 
-	            		&& chest.getItem() == SterlingAndBlackCore.sterlingSteelChest 
-	            		&& legs.getItem() == SterlingAndBlackCore.sterlingSteelLegs)
+	            if ( (helm.getItem() == SterlingAndBlackCore.sterlingSteelHelm)
+	            		&& (chest.getItem() == SterlingAndBlackCore.sterlingSteelChest) 
+	            		&& (legs.getItem() == SterlingAndBlackCore.sterlingSteelLegs))
 	            {
 	                player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 40, 0));
 	            }
 	        }
 
 	       // full set of Black Silver armor grants the temporary enchantment of Dig Speed 1
-	       if (player.getCurrentArmor(0) != null && player.getCurrentArmor(3) != null 
-	        		&& player.getCurrentArmor(2) != null && player.getCurrentArmor(1) != null)
+	       if (helm != null && chest != null && legs != null && boots != null)
 	        {
-	            ItemStack helmet = player.getCurrentArmor(0);
-	            ItemStack chest = player.getCurrentArmor(1);
-	            ItemStack legs = player.getCurrentArmor(2);
-	            ItemStack boots = player.getCurrentArmor(3);
 
-	            if (helmet.getItem() == SterlingAndBlackCore.blackSilverHelm 
+	            if (helm.getItem() == SterlingAndBlackCore.blackSilverHelm 
 	            		&& chest.getItem() == SterlingAndBlackCore.blackSilverChest 
 	            		&& legs.getItem() == SterlingAndBlackCore.blackSilverLegs 
 	            		&& boots.getItem() == SterlingAndBlackCore.blackSilverBoots)
