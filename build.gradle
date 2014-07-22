@@ -8,3 +8,9 @@ sourceSets.main {
 	}
 } 
 
+dependencies {
+    // you may put jars on which you depend on in ./libs
+    // that's these two jars:
+    // compile files ('../lib/[1.7.2] SimpleOres 2 + Plugins v1.4.2.jar', '../lib/OnlySilver-1.9.1-1.7.2.jar')
+}
+

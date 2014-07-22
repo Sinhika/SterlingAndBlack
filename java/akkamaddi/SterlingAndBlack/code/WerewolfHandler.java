@@ -75,23 +75,23 @@ public class WerewolfHandler
 
         Item item = stack.getItem();
 
-        if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverHoe.getUnlocalizedName())
+        if (item ==  SterlingAndBlackCore.blackSilverHoe)
         {
             event.ammount = 6;
         }
-        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverShovel.getUnlocalizedName())
+        else if (item ==  SterlingAndBlackCore.blackSilverShovel)
         {
             event.ammount = 7;
         }
-        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverPickaxe.getUnlocalizedName())
+        else if (item ==  SterlingAndBlackCore.blackSilverPickaxe)
         {
             event.ammount = 8;
         }
-        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverAxe.getUnlocalizedName())
+        else if (item ==  SterlingAndBlackCore.blackSilverAxe)
         {
             event.ammount = 9;
         }
-        else if (item.getUnlocalizedName(stack) ==  SterlingAndBlackCore.blackSilverSword.getUnlocalizedName())
+        else if (item ==  SterlingAndBlackCore.blackSilverSword)
         {
             event.ammount = 10;
         }

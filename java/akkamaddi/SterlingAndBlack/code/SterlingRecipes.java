@@ -255,6 +255,6 @@ public class SterlingRecipes
             FusionRecipes.addSmelting(new ItemStack(SterlingAndBlackCore.blackSilverHoe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(SterlingAndBlackCore.largeBlackSilverChunkItem), 20.0F);
-        }
+        } // end-if enableRecycling
     }
 }
