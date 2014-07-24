@@ -13,12 +13,10 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 public class WerewolfHandler
 {
-    @SuppressWarnings("rawtypes")
-	private final Class werewolf;
-    private Method isHumanForm;
+    private final Class<?> werewolf;
+    private final Method isHumanForm;
 
-    @SuppressWarnings("unchecked")
-	public WerewolfHandler() throws ClassNotFoundException
+    public WerewolfHandler() throws ClassNotFoundException
     {
         werewolf = Class.forName("drzhark.mocreatures.entity.monster.MoCEntityWerewolf");
 
