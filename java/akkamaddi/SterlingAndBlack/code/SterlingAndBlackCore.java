@@ -1,5 +1,8 @@
 package akkamaddi.SterlingAndBlack.code;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -9,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import zotmc.onlysilver.api.OnlySilverRegistry;
 import alexndr.SimpleOres.api.content.SimpleAxe;
 import alexndr.SimpleOres.api.content.SimpleHoe;
 import alexndr.SimpleOres.api.content.SimpleIngot;
@@ -17,6 +21,11 @@ import alexndr.SimpleOres.api.content.SimpleShovel;
 import alexndr.SimpleOres.api.content.SimpleSword;
 import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.helpers.LootHelper;
+
+import com.google.common.base.Function;
+import com.google.common.base.Functions;
+import com.google.common.base.Predicates;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -26,7 +35,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.2-1.4.1", 
+@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.10-1.4.2", 
 	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:onlysilver")
 
 public class SterlingAndBlackCore
@@ -125,38 +134,59 @@ public class SterlingAndBlackCore
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Sterling & Black item recycling recipes: false or true?", false).getBoolean(false);
         config.save();
         
+        List<Item> silverstuff = new LinkedList<Item>();
+        
         // define items
         sterlingSteelIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelIngot");
         smallSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("smallSterlingSteelChunkItem");
         mediumSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("mediumSterlingSteelChunkItem");
         largeSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("largeSterlingSteelChunkItem");
         sterlingSteelSword = new SimpleSword(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelSword");
+        silverstuff.add(sterlingSteelSword);
         sterlingSteelShovel = new SimpleShovel(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelShovel");
+        silverstuff.add(sterlingSteelShovel);
         sterlingSteelAxe = new SimpleAxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelAxe");
+        silverstuff.add(sterlingSteelAxe);
         sterlingSteelPickaxe = new SimplePickaxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelPickaxe");
+        silverstuff.add(sterlingSteelPickaxe);
         sterlingSteelHoe = new SimpleHoe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHoe");
-
+        silverstuff.add(sterlingSteelHoe);
+        
         // subclass armor
         sterlingSteelHelm = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
+        silverstuff.add(sterlingSteelHelm);
         sterlingSteelChest = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
+        silverstuff.add(sterlingSteelChest);
         sterlingSteelLegs = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
+        silverstuff.add(sterlingSteelLegs);
         sterlingSteelBoots = new SimpleArmorWithEffect( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
+        silverstuff.add(sterlingSteelBoots);
        
         blackSilverIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverIngot");
         smallBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("smallBlackSilverChunkItem");
         mediumBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("mediumBlackSilverChunkItem");
         largeBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("largeBlackSilverChunkItem");
+        
         blackSilverSword = new SimpleSword(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverSword");
+        silverstuff.add(blackSilverSword);
         blackSilverShovel = new SimpleShovel(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverShovel");
+        silverstuff.add(blackSilverShovel);
         blackSilverAxe = new SimpleAxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverAxe");
+        silverstuff.add(blackSilverAxe);
         blackSilverPickaxe = new SimplePickaxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverPickaxe");
+        silverstuff.add(blackSilverPickaxe);
         blackSilverHoe = new SimpleHoe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHoe");
+        silverstuff.add(blackSilverHoe);
         
        // subclass armor
         blackSilverHelm = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
+        silverstuff.add(blackSilverHelm);
         blackSilverChest = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
+        silverstuff.add(blackSilverChest);
         blackSilverLegs = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
+        silverstuff.add(blackSilverLegs);
         blackSilverBoots = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
+        silverstuff.add(blackSilverBoots);
        
         toolSterlingSteel.customCraftingMaterial = SterlingAndBlackCore.sterlingSteelIngot;
         toolBlackSilver.customCraftingMaterial = SterlingAndBlackCore.blackSilverIngot;
@@ -174,6 +204,11 @@ public class SterlingAndBlackCore
         GameRegistry.registerBlock(blockSterlingSteel, "blockSterlingSteel");
         GameRegistry.registerBlock(blockBlackSilver, "blockBlackSilver");
        
+        // register silver items with OnlySilver so that silver enchantments are applicable.
+		for (Item item : silverstuff) {
+			OnlySilverRegistry.registerSilverPredicate(item, Predicates.<ItemStack>alwaysTrue());
+		}
+		
         //recipes
         SterlingRecipes.doSterlingRecipes();
         
@@ -209,13 +244,27 @@ public class SterlingAndBlackCore
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(blackSilverSword), 1, 1, 1);
 
         //werewolves
-        if (SterlingAndBlackCore.werewolfEffectiveness)
-            try
-            {
-                MinecraftForge.EVENT_BUS.register(new WerewolfHandler());
-            }
-            catch (ClassNotFoundException ignored) {}
-
+        // note: only BlackSilver is effective against werewolves.
+        if (SterlingAndBlackCore.werewolfEffectiveness) 
+        {
+			OnlySilverRegistry.registerWerewolfDamage(blackSilverSword,
+					SterlingAndBlackCore.<ItemStack, Float> constant(10.0F));
+			OnlySilverRegistry.registerWerewolfDamage(blackSilverAxe,
+					SterlingAndBlackCore.<ItemStack, Float> constant(9.0F));
+			OnlySilverRegistry.registerWerewolfDamage(blackSilverPickaxe,
+					SterlingAndBlackCore.<ItemStack, Float> constant(8.0F));
+			OnlySilverRegistry.registerWerewolfDamage(blackSilverShovel,
+					SterlingAndBlackCore.<ItemStack, Float> constant(7.0F));
+			OnlySilverRegistry.registerWerewolfDamage(blackSilverHoe,
+					SterlingAndBlackCore.<ItemStack, Float> constant(6.0F));
+            // registration should allow blackSilver stuff to work with OnlySilver's werewolf handler, instead of having
+            // to load our own.
+//           try
+//           {
+//                MinecraftForge.EVENT_BUS.register(new WerewolfHandler());
+//            }
+//            catch (ClassNotFoundException ignored) {}
+        }
     } // end preInit
 
     /**
@@ -244,4 +293,11 @@ public class SterlingAndBlackCore
     {
         // Stub Method
     }
+    
+    // cut & pasted from OnlySilver's source code...
+	@SuppressWarnings("unchecked")
+	public static <F, T> Function<F, T> constant(T value) {
+		return (Function<F, T>) Functions.constant(value);
+	}
+
 } // end class SterlingAndBlackCore
