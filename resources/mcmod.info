@@ -12,6 +12,6 @@
 "authorList": [ "akkamaddi","Sinhika" ],
 "parent":"",
 "screenshots": [],
-"dependencies": ["MinecraftForge", "simpleores", "simpleoresfusion", "onlysilver"]
+"dependencies": ["simpleores", "fusionplugin", "onlysilver"]
 }
 ]
