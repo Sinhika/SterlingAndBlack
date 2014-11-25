@@ -35,7 +35,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.10-1.4.2", 
+@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.10-1.4.3", 
 	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:onlysilver; after:MoCreatures")
 
 public class SterlingAndBlackCore
@@ -86,7 +86,7 @@ public class SterlingAndBlackCore
     public static Block blockBlackSilver;
 
     public static boolean MakeMeSparkle;
-
+    public static boolean itemizeMobs;
     public static boolean werewolfEffectiveness;
 
     public static boolean enableRecycling;
@@ -132,6 +132,9 @@ public class SterlingAndBlackCore
         MakeMeSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Me Sparkle, false or true", false).getBoolean(false);
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Sterling & Black item recycling recipes: false or true?", false).getBoolean(false);
+        itemizeMobs = config.get(Configuration.CATEGORY_GENERAL,
+        		"Equip mobs with Sterling & Black gear, true or false", false).getBoolean(false);
+        		
         config.save();
         
         List<Item> silverstuff = new LinkedList<Item>();
@@ -259,11 +262,9 @@ public class SterlingAndBlackCore
 					SterlingAndBlackCore.<ItemStack, Float> constant(6.0F));
             // registration should allow blackSilver stuff to work with OnlySilver's werewolf handler, instead of having
             // to load our own.
-//           try
-//           {
-//                MinecraftForge.EVENT_BUS.register(new WerewolfHandler());
-//            }
-//            catch (ClassNotFoundException ignored) {}
+	        if (itemizeMobs) {
+	        	MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
+	        }
         }
     } // end preInit
 
@@ -274,8 +275,6 @@ public class SterlingAndBlackCore
     public void load(FMLInitializationEvent event)
     {
         proxy.registerRenderers();
-        MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-        
         // run tab icon call
         setTabIcons();
        
