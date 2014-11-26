@@ -1,5 +1,6 @@
 package akkamaddi.SterlingAndBlack.code;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,10 +10,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import zotmc.onlysilver.api.OnlySilverRegistry;
+import akkamaddi.akkamaddiCore.api.APIcore;
 import alexndr.SimpleOres.api.content.SimpleAxe;
 import alexndr.SimpleOres.api.content.SimpleHoe;
 import alexndr.SimpleOres.api.content.SimpleIngot;
@@ -45,7 +46,8 @@ public class SterlingAndBlackCore
     public static SterlingAndBlackCore instance;
 
     // Says where the client and server 'proxy' code is loaded.
-    @SidedProxy(clientSide = "akkamaddi.SterlingAndBlack.code.ClientProxy", serverSide = "akkamaddi.SterlingAndBlack.code.CommonProxy")
+    @SidedProxy(clientSide = "akkamaddi.SterlingAndBlack.code.ClientProxy", 
+    			serverSide = "akkamaddi.akkamaddiCore.code.CommonProxy")
     public static CommonProxy proxy;
 
     // set actual item names
@@ -97,8 +99,10 @@ public class SterlingAndBlackCore
     /**
      * ArmorMaterial. In form ("NAME", max damage (like uses, multiply by pieces for their max damage), new int[] {helmet defense, chestplate defense, leggings defense, boots defense}, enchantability)
      */
-    public static ArmorMaterial armorSterlingSteel = EnumHelper.addArmorMaterial("STERLINGSTEEL", 18, new int[] {3, 6, 5, 3}, 28);
-    public static ArmorMaterial armorBlackSilver = EnumHelper.addArmorMaterial("BLACKSILVER", 48, new int[] {5, 9, 7, 5}, 24);
+	public static ArmorMaterial armorSterlingSteel = EnumHelper
+			.addArmorMaterial("STERLINGSTEEL", 18, new int[] { 3, 6, 5, 3 }, 28);
+	public static ArmorMaterial armorBlackSilver = EnumHelper.addArmorMaterial(
+			"BLACKSILVER", 48, new int[] { 5, 9, 7, 5 }, 24);
 
     /**
      * Creating the Armor Renderers. This is simply so you can see the armor texture when you wear it.
@@ -108,8 +112,10 @@ public class SterlingAndBlackCore
 
     // set tool properties
     // ToolMaterial. In form ("NAME", mining level, max uses, speed, damage to entity, enchantability)
-    public static ToolMaterial toolSterlingSteel = EnumHelper.addToolMaterial("STERLINGSTEEL", 3, 660, 10.0F, 2, 26);
-    public static ToolMaterial toolBlackSilver = EnumHelper.addToolMaterial("BLACKSILVER", 5, 3460, 16.0F, 6, 22);
+	public static ToolMaterial toolSterlingSteel = EnumHelper.addToolMaterial(
+			"STERLINGSTEEL", 3, 660, 10.0F, 2, 26);
+	public static ToolMaterial toolBlackSilver = EnumHelper.addToolMaterial(
+			"BLACKSILVER", 5, 3460, 16.0F, 6, 22);
 
     // Tab
     public void setTabIcons()
@@ -127,14 +133,17 @@ public class SterlingAndBlackCore
     @EventHandler 
     public void preInit(FMLPreInitializationEvent event)
     {       
-        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		File installDir = event.getModConfigurationDirectory();
+		File configDir = new File(installDir, "akkamaddi");
+	    File configFile = new File(configDir, "sterlingandblack.cfg");
+	    Configuration config = new Configuration(configFile);
         config.load();
+        
         MakeMeSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Me Sparkle, false or true", false).getBoolean(false);
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Sterling & Black item recycling recipes: false or true?", false).getBoolean(false);
         itemizeMobs = config.get(Configuration.CATEGORY_GENERAL,
         		"Equip mobs with Sterling & Black gear, true or false", false).getBoolean(false);
-        		
         config.save();
         
         List<Item> silverstuff = new LinkedList<Item>();
@@ -156,13 +165,13 @@ public class SterlingAndBlackCore
         silverstuff.add(sterlingSteelHoe);
         
         // subclass armor
-        sterlingSteelHelm = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
+        sterlingSteelHelm = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
         silverstuff.add(sterlingSteelHelm);
-        sterlingSteelChest = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
+        sterlingSteelChest = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
         silverstuff.add(sterlingSteelChest);
-        sterlingSteelLegs = new SimpleArmorWithEffect(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
+        sterlingSteelLegs = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
         silverstuff.add(sterlingSteelLegs);
-        sterlingSteelBoots = new SimpleArmorWithEffect( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
+        sterlingSteelBoots = new SterlingSteelArmor( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
         silverstuff.add(sterlingSteelBoots);
        
         blackSilverIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverIngot");
@@ -182,13 +191,13 @@ public class SterlingAndBlackCore
         silverstuff.add(blackSilverHoe);
         
        // subclass armor
-        blackSilverHelm = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
+        blackSilverHelm = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
         silverstuff.add(blackSilverHelm);
-        blackSilverChest = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
+        blackSilverChest = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
         silverstuff.add(blackSilverChest);
-        blackSilverLegs = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
+        blackSilverLegs = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
         silverstuff.add(blackSilverLegs);
-        blackSilverBoots = new SimpleArmorWithEffect(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
+        blackSilverBoots = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
         silverstuff.add(blackSilverBoots);
        
         toolSterlingSteel.customCraftingMaterial = SterlingAndBlackCore.sterlingSteelIngot;
@@ -250,6 +259,9 @@ public class SterlingAndBlackCore
         // note: only BlackSilver is effective against werewolves.
         if (SterlingAndBlackCore.werewolfEffectiveness) 
         {
+			// registration should allow blackSilver stuff to work with
+			// OnlySilver's werewolf handler, instead of having
+			// to load our own.
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverSword,
 					SterlingAndBlackCore.<ItemStack, Float> constant(10.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverAxe,
@@ -260,11 +272,9 @@ public class SterlingAndBlackCore
 					SterlingAndBlackCore.<ItemStack, Float> constant(7.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverHoe,
 					SterlingAndBlackCore.<ItemStack, Float> constant(6.0F));
-            // registration should allow blackSilver stuff to work with OnlySilver's werewolf handler, instead of having
-            // to load our own.
-	        if (itemizeMobs) {
-	        	MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-	        }
+       }
+       if (itemizeMobs) {
+    		APIcore.instance.joinWorldModRegistry.add(new SnBJoinWorldHandler());
         }
     } // end preInit
 
@@ -277,11 +287,6 @@ public class SterlingAndBlackCore
         proxy.registerRenderers();
         // run tab icon call
         setTabIcons();
-       
-        //Armor Renderers
-        rendererSterlingSteel = proxy.addArmor("sterlingSteel");
-        rendererBlackSilver = proxy.addArmor("blackSilver");
-                
     } // end load()
 
     /**
