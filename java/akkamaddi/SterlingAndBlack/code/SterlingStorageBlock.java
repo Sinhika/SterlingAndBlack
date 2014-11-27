@@ -2,16 +2,15 @@ package akkamaddi.SterlingAndBlack.code;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.world.World;
+import alexndr.SimpleOres.api.content.SimpleBlock;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class SterlingStorageBlock extends Block
+public class SterlingStorageBlock extends SimpleBlock
 {
-    private String modName;
     /**
      * The main constructor for the blocks.
      *
@@ -21,24 +20,16 @@ public class SterlingStorageBlock extends Block
     public SterlingStorageBlock(Material material, String mod)
     {
         super(material);
-        this.modName = mod;
+        modId(mod);
         setHardness(7.0F);
         setResistance(12.0F);
         setStepSound(Block.soundTypeMetal);
         setBlockName("blockSterlingSteel");
         setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling);
         setLightLevel(0.8F);
+        setAsBeaconBase(true);
     }
 
-    /**
-     * Sets the texture for the block.
-     */
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
-    }
 
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)

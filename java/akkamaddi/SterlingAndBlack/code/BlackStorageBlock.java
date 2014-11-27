@@ -1,14 +1,11 @@
 package akkamaddi.SterlingAndBlack.code;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import alexndr.SimpleOres.api.content.SimpleBlock;
 
-public class BlackStorageBlock extends Block
+public class BlackStorageBlock extends SimpleBlock
 {
-    private String modName;
     /**
      * The main constructor for the blocks.
      *
@@ -17,21 +14,12 @@ public class BlackStorageBlock extends Block
     public BlackStorageBlock(Material material, String mod)
     {
         super(material);
-        this.modName = mod;
+        modId(mod);
         setHardness(12.0F);
         setResistance(26.0F);
         setStepSound(Block.soundTypeMetal);
         setBlockName("blockBlackSilver");
         setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling);
-    }
-
-    /**
-     * Sets the texture for the block.
-     */
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
+        setAsBeaconBase(true);
     }
 }

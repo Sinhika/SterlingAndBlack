@@ -3,9 +3,9 @@
 	<classpathentry kind="src" path="java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="bin/**|build*|.gradle/**|eclipse/**" kind="src" path="resources"/>
-	<classpathentry kind="lib" path="C:/Projects/Minecraft_17/SterlingAndBlack/libs/[1.7.10] SimpleOres 2   Plugins v1.4.3 .jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ForgeSrc"/>
 	<classpathentry kind="lib" path="C:/Projects/Minecraft_17/SterlingAndBlack/libs/OnlySilver-1.9.4-1.7.2.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/akkamaddiCore"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SimpleOres-2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -34,7 +34,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.7.10-1.4.3", 
 	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:onlysilver; after:MoCreatures")
@@ -206,16 +205,14 @@ public class SterlingAndBlackCore
         armorBlackSilver.customCraftingMaterial = SterlingAndBlackCore.blackSilverIngot;
 
          // define blocks
-        blockSterlingSteel = new SterlingStorageBlock(Material.iron, "sterlingandblack");
-        blockBlackSilver = new BlackStorageBlock(Material.iron, "sterlingandblack");
+		blockSterlingSteel = new SterlingStorageBlock(Material.iron,
+				"sterlingandblack");
+		blockBlackSilver = new BlackStorageBlock(Material.iron,
+				"sterlingandblack");
         
         blockSterlingSteel.setHarvestLevel("pickaxe", 0);
         blockBlackSilver.setHarvestLevel("pickaxe", 0);
-
-        // Registry
-        GameRegistry.registerBlock(blockSterlingSteel, "blockSterlingSteel");
-        GameRegistry.registerBlock(blockBlackSilver, "blockBlackSilver");
-       
+        
         // register silver items with OnlySilver so that silver enchantments are applicable.
 		for (Item item : silverstuff) {
 			OnlySilverRegistry.registerSilverPredicate(item, Predicates.<ItemStack>alwaysTrue());

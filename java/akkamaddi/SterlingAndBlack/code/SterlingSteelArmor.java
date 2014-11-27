@@ -1,6 +1,7 @@
 package akkamaddi.SterlingAndBlack.code;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -22,18 +23,24 @@ public class SterlingSteelArmor extends SimpleArmorWithEffect {
 	{
 		ItemStack [] armorbits = new ItemStack[4];
 		SimpleArmorWithEffect.getArmorPieces(player, armorbits);
+		Item [] armorItem = new Item[4];
 		for (int i=0; i < 4; i++) {
-			if (armorbits[i] == null) return;
+			if (armorbits[i] == null) {
+				armorItem[i] = null;
+			}
+			else {
+				armorItem[i] = armorbits[i].getItem();
+			}
 		}
-		if (armorbits[ARMOR_TYPE.CHEST.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelChest
-				&& armorbits[ARMOR_TYPE.LEGS.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelLegs
-				&& armorbits[ARMOR_TYPE.BOOTS.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelBoots) 
+		if (armorItem[ARMOR_TYPE.CHEST.ordinal()] == SterlingAndBlackCore.sterlingSteelChest
+				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == SterlingAndBlackCore.sterlingSteelLegs
+				&& armorItem[ARMOR_TYPE.BOOTS.ordinal()] == SterlingAndBlackCore.sterlingSteelBoots) 
 		{
             player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 40, 0));
 		}		
-		if (armorbits[ARMOR_TYPE.HELM.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelHelm
-				&& armorbits[ARMOR_TYPE.CHEST.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelChest
-				&& armorbits[ARMOR_TYPE.LEGS.ordinal()].getItem() == SterlingAndBlackCore.sterlingSteelLegs) 
+		if (armorItem[ARMOR_TYPE.HELM.ordinal()] == SterlingAndBlackCore.sterlingSteelHelm
+				&& armorItem[ARMOR_TYPE.CHEST.ordinal()] == SterlingAndBlackCore.sterlingSteelChest
+				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == SterlingAndBlackCore.sterlingSteelLegs) 
 		{
             player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 40, 0));
 		}		
