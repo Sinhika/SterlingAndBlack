@@ -1,0 +1,17 @@
+[
+{
+"modid": "sterlingandblack",
+"name": "Sterling and Black",
+"description": "Sterling Steel and Black Silver alloys to Zot's Only Silver. Fusion Furnace plug-in",
+"version": "1.7.10-1.4.2",
+"credits": "Created by akkamaddi, reliant on AleXndrTheGr8st and Zot201; updated to 1.7.x by Sinhika",
+"logoFile": "",
+"mcversion": "1.7.10",
+"url": "",
+"updateUrl": "",
+"authorList": [ "akkamaddi","Sinhika" ],
+"parent":"",
+"screenshots": [],
+"dependencies": ["simpleores", "fusionplugin", "onlysilver"]
+}
+]
