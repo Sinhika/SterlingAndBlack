@@ -1,7 +1,7 @@
 package akkamaddi.plugins.sterlingandblack;
 
-import akkamaddi.plugins.simpletungsten.ModInfo;
 import alexndr.api.core.LogHelper;
+import alexndr.plugins.Fusion.FusionFurnaceRecipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -208,81 +208,93 @@ public class Recipes
         
         // recipes: Fusion Furnace
         //Sterling Steel
-        FusionRecipes.addSmelting(new ItemStack(Items.iron_ingot), 
-        		new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
-        		new ItemStack(Content.smallSterlingSteelChunkItem), 6.0F);
-        FusionRecipes.addSmelting(new ItemStack(Items.iron_ingot), new ItemStack(OnlySilverAPI.silverIngot.get()), 
-        		new ItemStack(Items.dye, 1, 4), new ItemStack(Content.mediumSterlingSteelChunkItem), 8.0F);
-        FusionRecipes.addSmelting(new ItemStack(Items.iron_ingot), new ItemStack(OnlySilverAPI.silverIngot.get()), 
-        		new ItemStack(Items.glowstone_dust), new ItemStack(Content.largeSterlingSteelChunkItem), 20.F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
+				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
+						Items.coal, 1, OreDictionary.WILDCARD_VALUE),
+				new ItemStack(Content.smallSterlingSteelChunkItem), 6.0F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
+				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
+						Items.dye, 1, 4), new ItemStack(
+						Content.mediumSterlingSteelChunkItem), 8.0F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
+				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
+						Items.glowstone_dust), new ItemStack(
+						Content.largeSterlingSteelChunkItem), 20.F);
+        
         //Black Silver
-        FusionRecipes.addSmelting(new ItemStack(Content.onyx_gem), new ItemStack(OnlySilverAPI.silverIngot.get()), 
-        		new ItemStack(Content.smallSterlingSteelChunkItem), 
-        		new ItemStack(Content.smallBlackSilverChunkItem), 9.0F);
-        FusionRecipes.addSmelting(new ItemStack(Content.onyx_gem), new ItemStack(OnlySilverAPI.silverIngot.get()), 
-        		new ItemStack(Content.mediumSterlingSteelChunkItem), 
-        		new ItemStack(Content.mediumBlackSilverChunkItem), 12.0F);
-        FusionRecipes.addSmelting(new ItemStack(Content.onyx_gem), new ItemStack(OnlySilverAPI.silverIngot.get()), 
-        		new ItemStack(Content.largeSterlingSteelChunkItem), 
-        		new ItemStack(Content.largeBlackSilverChunkItem), 30.F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(
+				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
+				OnlySilverAPI.silverIngot.get()), new ItemStack(
+				Content.smallSterlingSteelChunkItem), new ItemStack(
+				Content.smallBlackSilverChunkItem), 9.0F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(
+				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
+				OnlySilverAPI.silverIngot.get()), new ItemStack(
+				Content.mediumSterlingSteelChunkItem), new ItemStack(
+				Content.mediumBlackSilverChunkItem), 12.0F);
+		FusionFurnaceRecipes.addSmelting(new ItemStack(
+				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
+				OnlySilverAPI.silverIngot.get()), new ItemStack(
+				Content.largeSterlingSteelChunkItem), new ItemStack(
+				Content.largeBlackSilverChunkItem), 30.F);
 
-        if (Content.enableRecycling)
+        if (Settings.enableRecycling)
         {
             // Sterling Steel
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelHelm, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelHelm, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelChest, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelChest, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel, 2, 0), new ItemStack(Items.coal, 2, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem, 2, 0), 30.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelLegs, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelLegs, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel, 2, 0), new ItemStack(Items.coal, 2, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem, 2, 0), 30.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelBoots, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelBoots, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelSword, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelSword, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelShovel, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelShovel, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelPickaxe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelPickaxe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelAxe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelAxe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.sterlingSteelHoe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.sterlingSteelHoe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Content.largeSterlingSteelChunkItem), 15.0F);
             
             // Black Silver
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverHelm, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverHelm, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverChest, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverChest, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel, 2, 0), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem, 2, 0), 40.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverLegs, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverLegs, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel, 2, 0), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem, 2, 0), 40.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverBoots, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverBoots, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverSword, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverSword, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverShovel, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverShovel, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverPickaxe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverPickaxe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverAxe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverAxe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
-            FusionRecipes.addSmelting(new ItemStack(Content.blackSilverHoe, 1, OreDictionary.WILDCARD_VALUE), 
+            FusionFurnaceRecipes.addSmelting(new ItemStack(Content.blackSilverHoe, 1, OreDictionary.WILDCARD_VALUE), 
             		new ItemStack(Blocks.gravel), new ItemStack(Items.lava_bucket), 
             		new ItemStack(Content.largeBlackSilverChunkItem), 20.0F);
         } // end-if enableRecycling

@@ -3,11 +3,15 @@ package akkamaddi.plugins.sterlingandblack;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.base.Predicates;
 
 import akkamaddi.api.core.LootHelper;
+import alexndr.api.content.blocks.SimpleBlock;
 import alexndr.api.content.items.SimpleAxe;
 import alexndr.api.content.items.SimpleHoe;
+import alexndr.api.content.items.SimpleItem;
 import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
@@ -81,51 +85,112 @@ public class Content
 	public static void doArmor() 
 	{
         // subclass armor
-        sterlingSteelHelm = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 0).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHelm");
-        silverstuff.add(sterlingSteelHelm);
-        sterlingSteelChest = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 1).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelChest");
-        silverstuff.add(sterlingSteelChest);
-        sterlingSteelLegs = new SterlingSteelArmor(armorSterlingSteel, rendererSterlingSteel, 2).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelLegs");
-        silverstuff.add(sterlingSteelLegs);
-        sterlingSteelBoots = new SterlingSteelArmor( armorSterlingSteel, rendererSterlingSteel, 3).modId("sterlingandblack").setType("sterlingSteel").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelBoots");
-        silverstuff.add(sterlingSteelBoots);
+		sterlingSteelHelm = new SterlingSteelArmor(
+				SterlingAndBlack.armorSterlingSteel, 0)
+				.modId(ModInfo.ID).setType("sterlingSteel")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelHelm");
+		silverstuff.add(sterlingSteelHelm);
+		sterlingSteelChest = new SterlingSteelArmor(
+				SterlingAndBlack.armorSterlingSteel, 1)
+				.modId(ModInfo.ID).setType("sterlingSteel")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelChest");
+		silverstuff.add(sterlingSteelChest);
+		sterlingSteelLegs = new SterlingSteelArmor(
+				SterlingAndBlack.armorSterlingSteel, 2)
+				.modId(ModInfo.ID).setType("sterlingSteel")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelLegs");
+		silverstuff.add(sterlingSteelLegs);
+		sterlingSteelBoots = new SterlingSteelArmor(
+				SterlingAndBlack.armorSterlingSteel, 3)
+				.modId(ModInfo.ID).setType("sterlingSteel")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelBoots");
+		silverstuff.add(sterlingSteelBoots);
         
         // subclass armor
-        blackSilverHelm = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 0).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHelm");
-        silverstuff.add(blackSilverHelm);
-        blackSilverChest = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 1).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverChest");
-        silverstuff.add(blackSilverChest);
-        blackSilverLegs = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 2).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverLegs");
-        silverstuff.add(blackSilverLegs);
-        blackSilverBoots = new BlackSilverArmor(armorBlackSilver, rendererBlackSilver, 3).modId("sterlingandblack").setType("blackSilver").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverBoots");
-        silverstuff.add(blackSilverBoots);
-       
+		blackSilverHelm = new BlackSilverArmor(
+				SterlingAndBlack.armorBlackSilver, 0).modId(ModInfo.ID)
+				.setType("blackSilver")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverHelm");
+		silverstuff.add(blackSilverHelm);
+		blackSilverChest = new BlackSilverArmor(
+				SterlingAndBlack.armorBlackSilver, 1).modId(ModInfo.ID)
+				.setType("blackSilver")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverChest");
+		silverstuff.add(blackSilverChest);
+		blackSilverLegs = new BlackSilverArmor(
+				SterlingAndBlack.armorBlackSilver, 2).modId(ModInfo.ID)
+				.setType("blackSilver")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverLegs");
+		silverstuff.add(blackSilverLegs);
+		blackSilverBoots = new BlackSilverArmor(
+				SterlingAndBlack.armorBlackSilver, 3).modId(ModInfo.ID)
+				.setType("blackSilver")
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverBoots");
+		silverstuff.add(blackSilverBoots);       
 
 	} // end doArmor()
 	
 	public static void doTools() 
 	{
-        sterlingSteelSword = new SimpleSword(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelSword");
-        silverstuff.add(sterlingSteelSword);
-        sterlingSteelShovel = new SimpleShovel(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelShovel");
-        silverstuff.add(sterlingSteelShovel);
-        sterlingSteelAxe = new SimpleAxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelAxe");
-        silverstuff.add(sterlingSteelAxe);
-        sterlingSteelPickaxe = new SimplePickaxe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelPickaxe");
-        silverstuff.add(sterlingSteelPickaxe);
-        sterlingSteelHoe = new SimpleHoe(toolSterlingSteel).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelHoe");
-        silverstuff.add(sterlingSteelHoe);
-        
-        blackSilverSword = new SimpleSword(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverSword");
-        silverstuff.add(blackSilverSword);
-        blackSilverShovel = new SimpleShovel(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverShovel");
-        silverstuff.add(blackSilverShovel);
-        blackSilverAxe = new SimpleAxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverAxe");
-        silverstuff.add(blackSilverAxe);
-        blackSilverPickaxe = new SimplePickaxe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverPickaxe");
-        silverstuff.add(blackSilverPickaxe);
-        blackSilverHoe = new SimpleHoe(toolBlackSilver).modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverHoe");
-        silverstuff.add(blackSilverHoe);
+		sterlingSteelSword = new SimpleSword(SterlingAndBlack.toolSterlingSteel)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelSword");
+		silverstuff.add(sterlingSteelSword);
+		sterlingSteelShovel = new SimpleShovel(
+				SterlingAndBlack.toolSterlingSteel).modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelShovel");
+		silverstuff.add(sterlingSteelShovel);
+		sterlingSteelAxe = new SimpleAxe(SterlingAndBlack.toolSterlingSteel)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelAxe");
+		silverstuff.add(sterlingSteelAxe);
+		sterlingSteelPickaxe = new SimplePickaxe(
+				SterlingAndBlack.toolSterlingSteel).modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelPickaxe");
+		silverstuff.add(sterlingSteelPickaxe);
+		sterlingSteelHoe = new SimpleHoe(SterlingAndBlack.toolSterlingSteel)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelHoe");
+		silverstuff.add(sterlingSteelHoe);
+
+		blackSilverSword = new SimpleSword(SterlingAndBlack.toolBlackSilver)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverSword");
+		silverstuff.add(blackSilverSword);
+		blackSilverShovel = new SimpleShovel(SterlingAndBlack.toolBlackSilver)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverShovel");
+		silverstuff.add(blackSilverShovel);
+		blackSilverAxe = new SimpleAxe(SterlingAndBlack.toolBlackSilver)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverAxe");
+		silverstuff.add(blackSilverAxe);
+		blackSilverPickaxe = new SimplePickaxe(SterlingAndBlack.toolBlackSilver)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverPickaxe");
+		silverstuff.add(blackSilverPickaxe);
+		blackSilverHoe = new SimpleHoe(SterlingAndBlack.toolBlackSilver)
+				.modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverHoe");
+		silverstuff.add(blackSilverHoe);
 
         //werewolves
         // note: only BlackSilver is effective against werewolves.
@@ -135,15 +200,15 @@ public class Content
 			// OnlySilver's werewolf handler, instead of having
 			// to load our own.
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverSword,
-					SterlingAndBlack.<ItemStack, Float> constant(10.0F));
+					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+4.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverAxe,
-					SterlingAndBlack.<ItemStack, Float> constant(9.0F));
+					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+3.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverPickaxe,
-					SterlingAndBlack.<ItemStack, Float> constant(8.0F));
+					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+2.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverShovel,
-					SterlingAndBlack.<ItemStack, Float> constant(7.0F));
+					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+1.0F));
 			OnlySilverRegistry.registerWerewolfDamage(blackSilverHoe,
-					SterlingAndBlack.<ItemStack, Float> constant(6.0F));
+					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity));
        } // end if werewolfEffectiveness
 
 	} // end doTools()
@@ -151,26 +216,49 @@ public class Content
 	public static void doBlocks() 
 	{
         // define blocks
-		blockSterlingSteel = new SterlingStorageBlock(Material.iron,
-				"sterlingandblack");
-		blockBlackSilver = new BlackStorageBlock(Material.iron,
-				"sterlingandblack");
-        blockSterlingSteel.setHarvestLevel("pickaxe", 0);
-        blockBlackSilver.setHarvestLevel("pickaxe", 0);
+		blockSterlingSteel = new SterlingStorageBlock(Material.iron, ModInfo.ID);
+		blockBlackSilver =  ((SimpleBlock) new SimpleBlock(Material.iron).modId(ModInfo.ID)
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setHardness(Settings.blackSilverHardness)
+				.setResistance(Settings.blackSilverResistance)
+				.setStepSound(Block.soundTypeMetal)).setBeaconBase(true)
+				.setBlockName("blockBlackSilver");
+		
+        blockSterlingSteel.setHarvestLevel("pickaxe", Settings.sterlingSteelHarvestLevel);
+        blockBlackSilver.setHarvestLevel("pickaxe", Settings.blackSilverHarvestLevel);
 	} // end doBlocks()
 	
 	public static void doItems()
 	{
         // define items
-        sterlingSteelIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelIngot");
-        smallSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("smallSterlingSteelChunkItem");
-        mediumSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("mediumSterlingSteelChunkItem");
-        largeSterlingSteelChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("largeSterlingSteelChunkItem");
-        
-        blackSilverIngot = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("blackSilverIngot");
-        smallBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("smallBlackSilverChunkItem");
-        mediumBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("mediumBlackSilverChunkItem");
-        largeBlackSilverChunkItem = new SimpleIngot().modId("sterlingandblack").setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling).setUnlocalizedName("largeBlackSilverChunkItem");
+		sterlingSteelIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("sterlingSteelIngot");
+		smallSterlingSteelChunkItem = new SimpleItem()
+				.modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("smallSterlingSteelChunkItem");
+		mediumSterlingSteelChunkItem = new SimpleItem()
+				.modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("mediumSterlingSteelChunkItem");
+		largeSterlingSteelChunkItem = new SimpleItem()
+				.modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("largeSterlingSteelChunkItem");
+
+		blackSilverIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("blackSilverIngot");
+		smallBlackSilverChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("smallBlackSilverChunkItem");
+		mediumBlackSilverChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("mediumBlackSilverChunkItem");
+		largeBlackSilverChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
+				.setCreativeTab(SterlingAndBlack.tabAkkamaddiSterling)
+				.setUnlocalizedName("largeBlackSilverChunkItem");
         
 	} // end doItems()
 	
@@ -246,4 +334,10 @@ public class Content
 	public static Item blackSilverBoots;
 
 	public static Block blockBlackSilver;
+
+	// cut & pasted from OnlySilver's source code...
+	@SuppressWarnings("unchecked")
+	private static <F, T> Function<F, T> constant(T value) {
+		return (Function<F, T>) Functions.constant(value);
+	}
 } // end class Content

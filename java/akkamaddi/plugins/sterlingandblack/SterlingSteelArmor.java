@@ -1,20 +1,19 @@
 package akkamaddi.plugins.sterlingandblack;
 
+import akkamaddi.api.core.SimpleArmorWithEffect;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import akkamaddi.akkamaddiCore.api.SimpleArmorWithEffect;
 
-public class SterlingSteelArmor extends SimpleArmorWithEffect {
+public class SterlingSteelArmor extends SimpleArmorWithEffect 
+{
 
-	public SterlingSteelArmor(ArmorMaterial armormaterial, int renderer,
-			int slotnumber) 
+	public SterlingSteelArmor(ArmorMaterial armormaterial, int slotnumber) 
 	{
-		super(armormaterial, renderer, slotnumber);
-		// TODO Auto-generated constructor stub
+		super(armormaterial,slotnumber);
 	}
 
 	@Override
@@ -32,15 +31,15 @@ public class SterlingSteelArmor extends SimpleArmorWithEffect {
 				armorItem[i] = armorbits[i].getItem();
 			}
 		}
-		if (armorItem[ARMOR_TYPE.CHEST.ordinal()] == SterlingAndBlack.sterlingSteelChest
-				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == SterlingAndBlack.sterlingSteelLegs
-				&& armorItem[ARMOR_TYPE.BOOTS.ordinal()] == SterlingAndBlack.sterlingSteelBoots) 
+		if (armorItem[ARMOR_TYPE.CHEST.ordinal()] == Content.sterlingSteelChest
+				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == Content.sterlingSteelLegs
+				&& armorItem[ARMOR_TYPE.BOOTS.ordinal()] == Content.sterlingSteelBoots) 
 		{
             player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 40, 0));
 		}		
-		if (armorItem[ARMOR_TYPE.HELM.ordinal()] == SterlingAndBlack.sterlingSteelHelm
-				&& armorItem[ARMOR_TYPE.CHEST.ordinal()] == SterlingAndBlack.sterlingSteelChest
-				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == SterlingAndBlack.sterlingSteelLegs) 
+		if (armorItem[ARMOR_TYPE.HELM.ordinal()] == Content.sterlingSteelHelm
+				&& armorItem[ARMOR_TYPE.CHEST.ordinal()] == Content.sterlingSteelChest
+				&& armorItem[ARMOR_TYPE.LEGS.ordinal()] == Content.sterlingSteelLegs) 
 		{
             player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 40, 0));
 		}		

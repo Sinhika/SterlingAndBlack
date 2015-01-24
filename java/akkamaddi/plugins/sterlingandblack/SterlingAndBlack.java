@@ -5,10 +5,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import alexndr.api.content.inventory.SimpleTab;
 import alexndr.api.core.LogHelper;
-
-import com.google.common.base.Function;
-import com.google.common.base.Functions;
-
+import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -84,13 +81,7 @@ public class SterlingAndBlack
 		LogHelper.info("Sterling & Black loaded");
     }
     
-    // cut & pasted from OnlySilver's source code...
-	@SuppressWarnings("unchecked")
-	public static <F, T> Function<F, T> constant(T value) {
-		return (Function<F, T>) Functions.constant(value);
-	}
-
-	/**
+    /**
 	 * Sets the tool and armor stats from the Settings file.
 	 */
 	private static void setToolAndArmorStats() 
@@ -98,20 +89,29 @@ public class SterlingAndBlack
 		/**
 		 * ToolMaterial
 		 */
-//		public static ToolMaterial toolSterlingSteel = EnumHelper.addToolMaterial(
-//		"STERLINGSTEEL", 3, 660, 10.0F, 2, 26);
-//public static ToolMaterial toolBlackSilver = EnumHelper.addToolMaterial(
-//		"BLACKSILVER", 5, 3460, 16.0F, 6, 22);
+		toolSterlingSteel = EnumHelper.addToolMaterial("STERLINGSTEEL", 
+				Settings.sterlingSteelMiningLevel, Settings.sterlingSteelUsesNum,
+				Settings.sterlingSteelMiningSpeed, Settings.sterlingSteelDamageVsEntity, 
+				Settings.sterlingSteelEnchantability);
+		toolBlackSilver = EnumHelper.addToolMaterial("BLACKSILVER", 
+				Settings.blackSilverMiningLevel, Settings.blackSilverUsesNum,
+				Settings.blackSilverMiningSpeed, Settings.blackSilverDamageVsEntity, 
+				Settings.blackSilverEnchantability);
 
-	/**
+		/**
 		 * ArmorMaterial. In form ("NAME", max damage (like uses, multiply by
 		 * pieces for their max damage), new int[] {helmet defense, chestplate
 		 * defense, leggings defense, boots defense}, enchantability)
 		 */
-//		public static ArmorMaterial armorSterlingSteel = EnumHelper
-//		.addArmorMaterial("STERLINGSTEEL", 18, new int[] { 3, 6, 5, 3 }, 28);
-//public static ArmorMaterial armorBlackSilver = EnumHelper.addArmorMaterial(
-//		"BLACKSILVER", 48, new int[] { 5, 9, 7, 5 }, 24);
+		armorSterlingSteel = EnumHelper.addArmorMaterial("STERLINGSTEEL", 
+				Settings.sterlingSteelArmorDurability, 
+				Settings.sterlingSteelArmorDamageReduction, 
+				Settings.sterlingSteelArmorEnchantability);
+		
+		armorBlackSilver = EnumHelper.addArmorMaterial(	"BLACKSILVER", 
+				Settings.blackSilverArmorDurability, 
+				Settings.blackSilverArmorDamageReduction, 
+				Settings.blackSilverArmorEnchantability);
 	} // end setToolAndArmorStats()
 	
 	/**
