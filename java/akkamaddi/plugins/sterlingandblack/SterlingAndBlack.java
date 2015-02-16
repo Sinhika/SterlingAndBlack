@@ -5,6 +5,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import alexndr.api.content.inventory.SimpleTab;
 import alexndr.api.core.LogHelper;
+import alexndr.api.core.ContentTypes;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -47,7 +48,7 @@ public class SterlingAndBlack
     {       
 		// Tab
 		LogHelper.info("Loading SimpleTungsten...");
-		tabAkkamaddiSterling = new SimpleTab("tabAkkamaddiSterling","general");
+		tabAkkamaddiSterling = new SimpleTab("tabAkkamaddiSterling", ContentTypes.CreativeTab.GENERAL);
 		
 		//Configuration
 		Settings.createOrLoadSettings(event);

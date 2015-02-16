@@ -6,6 +6,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/akkamaddiCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ForgeSrc"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimpleCore"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/OnlySilver"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/libs/OnlySilver-1.9.4-1.7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
