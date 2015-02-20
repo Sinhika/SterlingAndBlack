@@ -2,10 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="java"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/akkamaddiCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ForgeSrc"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/SimpleCore"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/libs/OnlySilver-1.9.4-1.7.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/SterlingAndBlack/libs/OnlySilver-1.9.4-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/SterlingAndBlack/libs/[1.7.10] SimpleCore API v1.0.3.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/SterlingAndBlack/libs/[1.7.10] SimpleOres 2 v1.5.2.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/SterlingAndBlack/libs/[1.7.10] Fusion v1.5.2.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/SterlingAndBlack/libs/akkamaddiCore-1.7.10-2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

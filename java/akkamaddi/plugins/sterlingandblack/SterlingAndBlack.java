@@ -121,8 +121,8 @@ public class SterlingAndBlack
 	private static void setRepairMaterials()
 	{
 		// Tools
-		toolSterlingSteel.customCraftingMaterial = Content.sterlingSteelIngot;
-		toolBlackSilver.customCraftingMaterial = Content.blackSilverIngot;
+		toolSterlingSteel.setRepairItem(new ItemStack(Content.sterlingSteelIngot));
+		toolBlackSilver.setRepairItem(new ItemStack(Content.blackSilverIngot));
 
 		// Armor
 		armorSterlingSteel.customCraftingMaterial = Content.sterlingSteelIngot;
