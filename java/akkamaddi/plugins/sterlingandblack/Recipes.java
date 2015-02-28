@@ -2,13 +2,13 @@ package akkamaddi.plugins.sterlingandblack;
 
 import alexndr.api.core.LogHelper;
 import alexndr.plugins.Fusion.FusionFurnaceRecipes;
+import alexndr.plugins.Fusion.FusionMaterial;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import zotmc.onlysilver.api.OnlySilverAPI;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes
@@ -208,35 +208,38 @@ public class Recipes
         
         // recipes: Fusion Furnace
         //Sterling Steel
-		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
-				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
-						Items.coal, 1, OreDictionary.WILDCARD_VALUE),
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("ingotIron"),
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
 				new ItemStack(Content.smallSterlingSteelChunkItem), 6.0F);
-		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
-				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
-						Items.dye, 1, 4), new ItemStack(
-						Content.mediumSterlingSteelChunkItem), 8.0F);
-		FusionFurnaceRecipes.addSmelting(new ItemStack(Items.iron_ingot),
-				new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(
-						Items.glowstone_dust), new ItemStack(
-						Content.largeSterlingSteelChunkItem), 20.F);
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("ingotIron"),
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Items.dye, 1, 4), 
+				new ItemStack(Content.mediumSterlingSteelChunkItem), 8.0F);
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("ingotIron"),
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Items.glowstone_dust), 
+				new ItemStack(Content.largeSterlingSteelChunkItem), 20.F);
         
         //Black Silver
-		FusionFurnaceRecipes.addSmelting(new ItemStack(
-				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
-				OnlySilverAPI.silverIngot.get()), new ItemStack(
-				Content.smallSterlingSteelChunkItem), new ItemStack(
-				Content.smallBlackSilverChunkItem), 9.0F);
-		FusionFurnaceRecipes.addSmelting(new ItemStack(
-				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
-				OnlySilverAPI.silverIngot.get()), new ItemStack(
-				Content.mediumSterlingSteelChunkItem), new ItemStack(
-				Content.mediumBlackSilverChunkItem), 12.0F);
-		FusionFurnaceRecipes.addSmelting(new ItemStack(
-				alexndr.plugins.SimpleOres.Content.onyx_gem), new ItemStack(
-				OnlySilverAPI.silverIngot.get()), new ItemStack(
-				Content.largeSterlingSteelChunkItem), new ItemStack(
-				Content.largeBlackSilverChunkItem), 30.F);
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("gemOnyx"), 
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Content.smallSterlingSteelChunkItem), 
+				new ItemStack(Content.smallBlackSilverChunkItem), 9.0F);
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("gemOnyx"), 
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Content.mediumSterlingSteelChunkItem), 
+				new ItemStack(Content.mediumBlackSilverChunkItem), 12.0F);
+		FusionFurnaceRecipes.addSmelting(
+				FusionMaterial.of("gemOnyx"), 
+				FusionMaterial.of("ingotSilver"), 
+				FusionMaterial.of(Content.largeSterlingSteelChunkItem), 
+				new ItemStack(Content.largeBlackSilverChunkItem), 30.F);
 
         if (Settings.enableRecycling)
         {
