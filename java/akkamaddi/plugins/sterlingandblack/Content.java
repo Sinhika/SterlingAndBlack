@@ -3,11 +3,12 @@ package akkamaddi.plugins.sterlingandblack;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.google.common.base.Function;
-import com.google.common.base.Functions;
-import com.google.common.base.Predicates;
-
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import akkamaddi.api.core.LootHelper;
+import akkamaddi.api.core.WerewolfHandler;
 import alexndr.api.content.blocks.SimpleBlock;
 import alexndr.api.content.items.SimpleAxe;
 import alexndr.api.content.items.SimpleHoe;
@@ -16,16 +17,15 @@ import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
 import alexndr.api.core.LogHelper;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import zotmc.onlysilver.api.OnlySilverRegistry;
+
+import com.google.common.base.Predicates;
+//import zotmc.onlysilver.api.OnlySilverRegistry;
 
 public class Content 
 {
     public static List<Item> silverstuff;
-
+    public static final OnlySilverContents OS = new OnlySilverContents();
+    
 	/**
 	 * Loads all the Sterling & Black content, by calling the methods below.
 	 */
@@ -74,12 +74,13 @@ public class Content
 			e.printStackTrace();
 		}
         
-        // register silver items with OnlySilver so that silver enchantments are applicable.
-		for (Item item : silverstuff) {
-			OnlySilverRegistry.registerSilverPredicate(item, Predicates.<ItemStack>alwaysTrue());
+        // register silver items with OnlySilver so that silver enchantments are applicable...
+		// if OnlySilver is loaded, that is.
+		if (OS.isModLoaded()) {
+		    for (Item item : silverstuff) {
+		        OS.registerSilverPredicate(item, Predicates.<ItemStack>alwaysTrue());
+		    }
 		}
-		
-
 	} // end preInitialize()
 	
 	public static void doArmor() 
@@ -196,19 +197,13 @@ public class Content
         // note: only BlackSilver is effective against werewolves.
         if (Settings.werewolfEffectiveness) 
         {
-			// registration should allow blackSilver stuff to work with
-			// OnlySilver's werewolf handler, instead of having
-			// to load our own.
-			OnlySilverRegistry.registerWerewolfDamage(blackSilverSword,
-					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+4.0F));
-			OnlySilverRegistry.registerWerewolfDamage(blackSilverAxe,
-					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+3.0F));
-			OnlySilverRegistry.registerWerewolfDamage(blackSilverPickaxe,
-					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+2.0F));
-			OnlySilverRegistry.registerWerewolfDamage(blackSilverShovel,
-					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity+1.0F));
-			OnlySilverRegistry.registerWerewolfDamage(blackSilverHoe,
-					Content.<ItemStack, Float> constant(Settings.blackSilverDamageVsEntity));
+			// Register with our own werewolf handler instead of OnlySilver's, because the
+            // mod providing silver may not be OnlySilver...
+            WerewolfHandler.Damage2Wolf.put(blackSilverSword,Settings.blackSilverDamageVsEntity+4.0F);
+            WerewolfHandler.Damage2Wolf.put(blackSilverAxe,Settings.blackSilverDamageVsEntity+3.0F);
+            WerewolfHandler.Damage2Wolf.put(blackSilverPickaxe,Settings.blackSilverDamageVsEntity+2.0F);
+            WerewolfHandler.Damage2Wolf.put(blackSilverShovel,Settings.blackSilverDamageVsEntity+1.0F);
+            WerewolfHandler.Damage2Wolf.put(blackSilverHoe,Settings.blackSilverDamageVsEntity);
        } // end if werewolfEffectiveness
 
 	} // end doTools()
@@ -335,9 +330,4 @@ public class Content
 
 	public static Block blockBlackSilver;
 
-	// cut & pasted from OnlySilver's source code...
-	@SuppressWarnings("unchecked")
-	private static <F, T> Function<F, T> constant(T value) {
-		return (Function<F, T>) Functions.constant(value);
-	}
 } // end class Content

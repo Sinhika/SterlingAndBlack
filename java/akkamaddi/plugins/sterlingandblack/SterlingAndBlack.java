@@ -14,18 +14,10 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid =  ModInfo.ID, name = ModInfo.NAME, version =  ModInfo.VERSION, 
-	dependencies = "required-after:simplecore; required-after:simpleores ; required-after:fusion ; required-after:akkamaddicore; required-after:onlysilver; after:MoCreatures")
+	dependencies = "required-after:simplecore; required-after:simpleores ; required-after:fusion ; required-after:akkamaddicore; after:onlysilver; after:MoCreatures")
 
 public class SterlingAndBlack
 {
-//    // The instance of your mod that Forge uses.
-//    @Instance("sterlingandblack")
-//    public static SterlingAndBlack instance;
-
-//    // Says where the client and server 'proxy' code is loaded.
-//    @SidedProxy(clientSide = "akkamaddi.SterlingAndBlack.code.ClientProxy", 
-//    			serverSide = "akkamaddi.akkamaddiCore.code.CommonProxy")
-//    public static CommonProxy proxy;
 
     // tab
     public static SimpleTab tabAkkamaddiSterling;
@@ -47,7 +39,7 @@ public class SterlingAndBlack
     public void preInit(FMLPreInitializationEvent event)
     {       
 		// Tab
-		LogHelper.info("Loading SimpleTungsten...");
+		LogHelper.info("Loading Sterling and Black...");
 		tabAkkamaddiSterling = new SimpleTab("tabAkkamaddiSterling", ContentTypes.CreativeTab.GENERAL);
 		
 		//Configuration
