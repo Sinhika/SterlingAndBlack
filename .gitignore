@@ -9,9 +9,9 @@ bin/
 build.number
 
 # Eclipse
-/.settings
-/.classpath
-/.project
+.settings/
+.classpath
+.project
 *.launch
 
 # Intellij
