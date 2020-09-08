@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "sterlingblack:item/sterling_steel_sword"
+    }
+}
