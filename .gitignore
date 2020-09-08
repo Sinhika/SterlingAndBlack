@@ -1,6 +1,18 @@
+# Common
+/.gradle
+/build
+/run
+gradlew
+gradle/
+gradlew.bat
 bin/
-build/
-libs/
-*.log
-*.jar
-*.class
+build.number
+
+# Eclipse
+/.settings
+/.classpath
+/.project
+*.launch
+
+# Intellij
+/.idea
