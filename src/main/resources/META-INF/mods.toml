@@ -14,7 +14,7 @@ updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.15/u
 displayURL="CurseForge URL"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
-description='''a template for additional add-ons
+description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simple Ores2:Fusion add-on
 '''
 
 [[dependencies.sterlingblack]]
