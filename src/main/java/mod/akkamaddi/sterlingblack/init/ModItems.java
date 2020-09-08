@@ -1,8 +1,6 @@
 package mod.akkamaddi.sterlingblack.init;
 
-import mod.author.simplemod.SimpleMod;
-import mod.author.simplemod.content.SimpleModArmorMaterial;
-import mod.author.simplemod.content.SimpleModItemTier;
+import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
@@ -29,16 +27,25 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModItems 
 {
     public static final DeferredRegister<Item> ITEMS = 
-            DeferredRegister.create(ForgeRegistries.ITEMS, SimpleMod.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, SterlingAndBlack.MODID);
 
     // ingots and nuggets
-    public static final RegistryObject<Item> foo_ingot = ITEMS.register("foo_ingot", 
+    public static final RegistryObject<Item> sterling_steel_ingot = ITEMS.register("sterling_steel_ingot", 
             ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> foo_nugget = ITEMS.register("foo_nugget",
+    public static final RegistryObject<Item> sterling_steel_nugget = ITEMS.register("sterling_steel_nugget",
             ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> bar_ingot = ITEMS.register("bar_ingot",
+    public static final RegistryObject<Item> medium_sterling_steel_chunk = ITEMS.register("medium_sterling_steel_chunk", 
             ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> bar_nugget = ITEMS.register("bar_nugget",
+    public static final RegistryObject<Item> large_sterling_steel_chunk = ITEMS.register("large_sterling_steel_chunk",
+            ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+   
+    public static final RegistryObject<Item> black_silver_ingot = ITEMS.register("black_silver_ingot",
+            ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> black_silver_nugget = ITEMS.register("black_silver_nugget",
+            ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> medium_black_silver_chunk = ITEMS.register("medium_black_silver_chunk",
+            ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> large_black_silver_chunk = ITEMS.register("large_black_silver_chunk",
             ()-> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // parts
@@ -48,71 +55,71 @@ public final class ModItems
     // bows
 
     // swords
-    public static final RegistryObject<SwordItem> foo_sword = ITEMS.register("foo_sword",
+    public static final RegistryObject<SwordItem> sterling_steel_sword = ITEMS.register("sterling_steel_sword",
             () -> new SwordItem(SimpleModItemTier.FOO, 3, -2.4F,
                                 new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<SwordItem> bar_sword = ITEMS.register("bar_sword",
+    public static final RegistryObject<SwordItem> black_silver_sword = ITEMS.register("black_silver_sword",
             () -> new SwordItem(SimpleModItemTier.BAR, 3, -2.4F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // pickaxes
-    public static final RegistryObject<PickaxeItem> foo_pickaxe = ITEMS.register("foo_pickaxe",
+    public static final RegistryObject<PickaxeItem> sterling_steel_pickaxe = ITEMS.register("sterling_steel_pickaxe",
             () -> new PickaxeItem(SimpleModItemTier.FOO, 1, -2.8F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<PickaxeItem> bar_pickaxe = ITEMS.register("bar_pickaxe",
+    public static final RegistryObject<PickaxeItem> black_silver_pickaxe = ITEMS.register("black_silver_pickaxe",
             () -> new PickaxeItem(SimpleModItemTier.BAR, 1, -2.8F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // axes
-    public static final RegistryObject<AxeItem> foo_axe = ITEMS.register("foo_axe",
+    public static final RegistryObject<AxeItem> sterling_steel_axe = ITEMS.register("sterling_steel_axe",
             () -> new AxeItem(SimpleModItemTier.FOO, 7.0F, -3.1F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<AxeItem> bar_axe = ITEMS.register("bar_axe",
+    public static final RegistryObject<AxeItem> black_silver_axe = ITEMS.register("black_silver_axe",
             () -> new AxeItem(SimpleModItemTier.BAR, 6.0F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shovels
-    public static final RegistryObject<ShovelItem> foo_shovel = ITEMS.register("foo_shovel",
+    public static final RegistryObject<ShovelItem> sterling_steel_shovel = ITEMS.register("sterling_steel_shovel",
             () -> new ShovelItem(SimpleModItemTier.FOO, 1.5F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ShovelItem> bar_shovel = ITEMS.register("bar_shovel",
+    public static final RegistryObject<ShovelItem> black_silver_shovel = ITEMS.register("black_silver_shovel",
             () -> new ShovelItem(SimpleModItemTier.BAR, 1.5F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // hoes
-    public static final RegistryObject<HoeItem> foo_hoe = ITEMS.register("foo_hoe",
+    public static final RegistryObject<HoeItem> sterling_steel_hoe = ITEMS.register("sterling_steel_hoe",
             () -> new HoeItem(SimpleModItemTier.FOO,-2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<HoeItem> bar_hoe = ITEMS.register("bar_hoe",
+    public static final RegistryObject<HoeItem> black_silver_hoe = ITEMS.register("black_silver_hoe",
             () -> new HoeItem(SimpleModItemTier.BAR,-3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // ARMOR
-    // foo
-    public static final RegistryObject<ArmorItem> foo_helmet = ITEMS.register("foo_helmet",
+    // sterling_steel
+    public static final RegistryObject<ArmorItem> sterling_steel_helmet = ITEMS.register("sterling_steel_helmet",
             () -> new ArmorItem(SimpleModArmorMaterial.FOO, EquipmentSlotType.HEAD,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> foo_leggings = ITEMS.register("foo_leggings",
+    public static final RegistryObject<ArmorItem> sterling_steel_leggings = ITEMS.register("sterling_steel_leggings",
             () -> new ArmorItem(SimpleModArmorMaterial.FOO, EquipmentSlotType.LEGS,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> foo_chestplate = ITEMS.register("foo_chestplate",
+    public static final RegistryObject<ArmorItem> sterling_steel_chestplate = ITEMS.register("sterling_steel_chestplate",
             () -> new ArmorItem(SimpleModArmorMaterial.FOO, EquipmentSlotType.CHEST,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> foo_boots = ITEMS.register("foo_boots",
+    public static final RegistryObject<ArmorItem> sterling_steel_boots = ITEMS.register("sterling_steel_boots",
             () -> new ArmorItem(SimpleModArmorMaterial.FOO, EquipmentSlotType.FEET,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
-    // bar
-    public static final RegistryObject<ArmorItem> bar_helmet = ITEMS.register("bar_helmet",
+    // black_silver
+    public static final RegistryObject<ArmorItem> black_silver_helmet = ITEMS.register("black_silver_helmet",
             () -> new ArmorItem(SimpleModArmorMaterial.BAR, EquipmentSlotType.HEAD,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> bar_leggings = ITEMS.register("bar_leggings",
+    public static final RegistryObject<ArmorItem> black_silver_leggings = ITEMS.register("black_silver_leggings",
             () -> new ArmorItem(SimpleModArmorMaterial.BAR, EquipmentSlotType.LEGS,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> bar_chestplate = ITEMS.register("bar_chestplate",
+    public static final RegistryObject<ArmorItem> black_silver_chestplate = ITEMS.register("black_silver_chestplate",
             () -> new ArmorItem(SimpleModArmorMaterial.BAR, EquipmentSlotType.CHEST,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ArmorItem> bar_boots = ITEMS.register("bar_boots",
+    public static final RegistryObject<ArmorItem> black_silver_boots = ITEMS.register("black_silver_boots",
             () -> new ArmorItem(SimpleModArmorMaterial.BAR, EquipmentSlotType.FEET,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 

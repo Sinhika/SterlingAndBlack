@@ -1,5 +1,6 @@
 package mod.akkamaddi.sterlingblack.init;
 
+import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.alexndr.simpleores.SimpleOres;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -11,7 +12,7 @@ public final class ModTabGroups
 {
 
     public static final ItemGroup MOD_ITEM_GROUP = 
-            new ModTabGroup(SimpleOres.MODID, () -> new ItemStack(ModItems.foo_ingot.get()));
+            new ModTabGroup(SterlingAndBlack.MODID, () -> new ItemStack(ModItems.black_silver_ingot.get()));
 
     public static final class ModTabGroup extends ItemGroup
     {
