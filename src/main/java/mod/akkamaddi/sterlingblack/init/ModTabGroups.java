@@ -1,7 +1,6 @@
 package mod.akkamaddi.sterlingblack.init;
 
 import mod.akkamaddi.sterlingblack.SterlingAndBlack;
-import mod.alexndr.simpleores.SimpleOres;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

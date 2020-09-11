@@ -1,6 +1,7 @@
 package mod.akkamaddi.sterlingblack.init;
 
 import mod.akkamaddi.sterlingblack.SterlingAndBlack;
+import mod.akkamaddi.sterlingblack.content.SterlingSteelBlock;
 import mod.alexndr.simpleores.api.content.SimpleMetalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -27,9 +28,9 @@ public final class ModBlocks
            DeferredRegister.create(ForgeRegistries.BLOCKS, SterlingAndBlack.MODID);
 
     // Metal Blocks
-    public static final RegistryObject<SimpleMetalBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON)
-                    .hardnessAndResistance(7.0F, 12.0F)
+    public static final RegistryObject<SterlingSteelBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",
+            () -> new SterlingSteelBlock(Block.Properties.create(Material.IRON)
+                    .hardnessAndResistance(7.0F, 12.0F).lightValue(SterlingSteelBlock.sterlingSteelLightLevel)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<SimpleMetalBlock> black_silver_block = BLOCKS.register("black_silver_block",
             () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON, MaterialColor.BLACK)
