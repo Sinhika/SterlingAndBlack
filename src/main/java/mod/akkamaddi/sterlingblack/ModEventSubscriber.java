@@ -7,6 +7,12 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import mod.akkamaddi.sterlingblack.config.ConfigHelper;
+import mod.akkamaddi.sterlingblack.config.ConfigHolder;
+import mod.akkamaddi.sterlingblack.config.SterlingBlackConfig;
+import mod.akkamaddi.sterlingblack.init.ModBlocks;
+import mod.akkamaddi.sterlingblack.init.ModTabGroups;
+import mod.alexndr.simpleores.api.config.FlagCondition;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -14,14 +20,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-@SuppressWarnings("deprecation")
 @EventBusSubscriber(modid = SterlingAndBlack.MODID, bus = MOD)
 public final class ModEventSubscriber 
 {
@@ -83,7 +87,7 @@ public final class ModEventSubscriber
 	public static void onRegisterRecipeSerializers(
 	        @Nonnull final RegistryEvent.Register<IRecipeSerializer<?>> event)
 	{
-	       CraftingHelper.register(new FlagCondition.Serializer(SterlingAndBlackConfig.INSTANCE, 
+	       CraftingHelper.register(new FlagCondition.Serializer(SterlingBlackConfig.INSTANCE, 
                                                    new ResourceLocation(SterlingAndBlack.MODID, "flag")));	    
 	} // end registerRecipeSerializers
 	

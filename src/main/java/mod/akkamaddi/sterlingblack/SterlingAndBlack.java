@@ -3,6 +3,7 @@ package mod.akkamaddi.sterlingblack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import mod.akkamaddi.sterlingblack.config.ConfigHolder;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.akkamaddi.sterlingblack.init.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
