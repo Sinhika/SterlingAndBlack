@@ -2,19 +2,29 @@ package mod.akkamaddi.sterlingblack;
 
 import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.annotation.Nonnull;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+
 import mod.akkamaddi.sterlingblack.config.ConfigHelper;
 import mod.akkamaddi.sterlingblack.config.ConfigHolder;
 import mod.akkamaddi.sterlingblack.config.SterlingBlackConfig;
+import mod.akkamaddi.sterlingblack.helpers.IsSterlingBlackItem;
+import mod.akkamaddi.sterlingblack.helpers.OnlySilverContents;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.akkamaddi.sterlingblack.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
+import mod.zotmc.onlysilver.init.ModItems;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.CraftingHelper;
@@ -29,15 +39,21 @@ import net.minecraftforge.registries.IForgeRegistry;
 @EventBusSubscriber(modid = SterlingAndBlack.MODID, bus = MOD)
 public final class ModEventSubscriber 
 {
+    public static final OnlySilverContents OS = new OnlySilverContents();
 	private static final Logger LOGGER = LogManager.getLogger(SterlingAndBlack.MODID + " Mod Event Subscriber");
 
     /**
      * For best inter-mod compatibility, run ore generation in a DeferredWorkQueue, per dieseiben07.
      * @param event
      */
+    @SuppressWarnings("unchecked")
     @SubscribeEvent
     public static void onCommonSetup(final FMLCommonSetupEvent event)
     {
+        if (OS.isModLoaded()) 
+        {
+           OS.registerSilverPredicate((Predicate<ItemStack>) new IsSterlingBlackItem());
+        } // end-if OnlySilver
         LOGGER.debug("Common setup done");
     } // end onCommonSetup
 

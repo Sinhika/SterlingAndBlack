@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
  */
 public final class ModUtil
 {
-
+    
     /**
      * Is player wearing a partial set of the same armor material?
      * @param[in] slot_list list of slots required.
