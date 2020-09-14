@@ -325,6 +325,15 @@ public class SterlingBlackDataGenerator
           
             // blasting
             CookingRecipeBuilder
+            .blastingRecipe(
+                    Ingredient.fromItems(ModItems.sterling_steel_axe.get(),
+                            ModItems.sterling_steel_hoe.get(), ModItems.sterling_steel_pickaxe.get(),
+                            ModItems.sterling_steel_shovel.get(), ModItems.sterling_steel_sword.get()),
+                    ModItems.sterling_steel_nugget.get(), 0.4F, 100)
+            .addCriterion("has_item", hasItem(ModItems.sterling_steel_axe.get()))
+            .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "sterling_steel_nugget_from_blasting_tools"));
+            
+            CookingRecipeBuilder
                     .blastingRecipe(
                             Ingredient.fromItems(ModItems.sterling_steel_boots.get(), ModItems.sterling_steel_chestplate.get(),
                                     ModItems.sterling_steel_helmet.get(), ModItems.sterling_steel_leggings.get()),
@@ -351,6 +360,15 @@ public class SterlingBlackDataGenerator
                 .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_nugget_from_smelting_armor"));
       
             // blasting
+            CookingRecipeBuilder
+            .blastingRecipe(
+                    Ingredient.fromItems(ModItems.black_silver_axe.get(),
+                            ModItems.black_silver_hoe.get(), ModItems.black_silver_pickaxe.get(),
+                            ModItems.black_silver_shovel.get(), ModItems.black_silver_sword.get()),
+                    ModItems.black_silver_nugget.get(), 0.4F, 100)
+            .addCriterion("has_item", hasItem(ModItems.black_silver_axe.get()))
+            .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_nugget_from_blasting_tools"));
+            
             CookingRecipeBuilder
                 .blastingRecipe(
                         Ingredient.fromItems(ModItems.black_silver_boots.get(), ModItems.black_silver_chestplate.get(),
