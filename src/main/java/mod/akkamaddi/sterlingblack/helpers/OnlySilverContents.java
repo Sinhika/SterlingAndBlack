@@ -5,8 +5,7 @@ package mod.akkamaddi.sterlingblack.helpers;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import com.google.common.base.Predicate;
+import java.util.function.Predicate;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.ModList;
@@ -72,11 +71,11 @@ public class OnlySilverContents
         return "onlysilver";
     }
     
-    public void registerSilverPredicate(Predicate<ItemStack> silverPredicate)
+    public void registerSilverPredicate(Predicate<? super ItemStack> silverPredicate)
     {
        try
         {
-            registerSilverPredicateMethod.invoke(null, new Object [] {silverPredicate});
+            registerSilverPredicateMethod.invoke(null, silverPredicate);
         }
         catch (IllegalAccessException | IllegalArgumentException
                 | InvocationTargetException e)

@@ -16,30 +16,35 @@ import javax.annotation.Nonnull;
  */
 public final class ModUtil
 {
-    
+
     /**
      * Is player wearing a partial set of the same armor material?
+     * 
      * @param[in] slot_list list of slots required.
      * @return boolean
      */
-    public static boolean isPlayerWearingPartialSet(PlayerEntity player, 
-                                                    @Nonnull IArmorMaterial material, 
-                                                    @Nonnull Iterable<EquipmentSlotType> slot_list)
+    public static boolean isPlayerWearingPartialSet(PlayerEntity player, @Nonnull IArmorMaterial material,
+            @Nonnull Iterable<EquipmentSlotType> slot_list)
     {
         List<ItemStack> armorList = (List<ItemStack>) player.getArmorInventoryList();
-        for (EquipmentSlotType slot: slot_list)
+        for (EquipmentSlotType slot : slot_list)
         {
-            ArmorItem piece = (ArmorItem) armorList.get(slot.getIndex()).getItem();
+            ItemStack stack = armorList.get(slot.getIndex());
+            if (stack.isEmpty()) { return false; }
+            if (!(stack.getItem() instanceof ArmorItem)) { return false; }
+            ArmorItem piece = (ArmorItem) stack.getItem();
             IArmorMaterial pieceMaterial = piece.getArmorMaterial();
-            if (pieceMaterial != material) {
+            if (pieceMaterial != material)
+            {
                 return false;
             }
         }
         return true;
     } // end ()
-    
+
     /**
      * Is player wearing a full set of the same armor material?
+     * 
      * @return boolean
      */
     public static boolean isPlayerWearingFullSet(PlayerEntity player, @Nonnull IArmorMaterial material)
@@ -47,11 +52,18 @@ public final class ModUtil
         Iterable<ItemStack> armorList = player.getArmorInventoryList();
         for (ItemStack stack : armorList)
         {
-            if (stack.isEmpty()) { return false; }
-            if (! (stack.getItem() instanceof ArmorItem)) { return false; }
+            if (stack.isEmpty())
+            {
+                return false;
+            }
+            if (!(stack.getItem() instanceof ArmorItem))
+            {
+                return false;
+            }
             ArmorItem piece = (ArmorItem) stack.getItem();
             IArmorMaterial pieceMaterial = piece.getArmorMaterial();
-            if (pieceMaterial != material) {
+            if (pieceMaterial != material)
+            {
                 return false;
             }
         } // end-for
