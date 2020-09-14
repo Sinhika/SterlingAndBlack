@@ -1,5 +1,7 @@
 {
   "replace": false,
   "values": [
+  	"#forge:nuggets/sterling_steel",
+  	"#forge:nuggets/black_silver"
    ]
 }

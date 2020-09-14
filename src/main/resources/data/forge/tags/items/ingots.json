@@ -1,5 +1,7 @@
 {
   "replace": false,
   "values": [
+  	"#forge:ingots/sterling_steel",
+  	"#forge:ingots/black_silver"
    ]
 }
