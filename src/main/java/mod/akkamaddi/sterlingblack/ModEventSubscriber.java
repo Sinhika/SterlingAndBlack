@@ -2,16 +2,12 @@ package mod.akkamaddi.sterlingblack;
 
 import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
 
 import mod.akkamaddi.sterlingblack.config.ConfigHelper;
 import mod.akkamaddi.sterlingblack.config.ConfigHolder;
@@ -21,7 +17,7 @@ import mod.akkamaddi.sterlingblack.helpers.OnlySilverContents;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.akkamaddi.sterlingblack.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
-import mod.zotmc.onlysilver.init.ModItems;
+import mod.zotmc.onlysilver.api.OnlySilverRegistry;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -52,7 +48,7 @@ public final class ModEventSubscriber
     {
         if (OS.isModLoaded()) 
         {
-           OS.registerSilverPredicate((Predicate<ItemStack>) new IsSterlingBlackItem());
+            OnlySilverRegistry.registerSilverPredicate(new IsSterlingBlackItem());
         } // end-if OnlySilver
         LOGGER.debug("Common setup done");
     } // end onCommonSetup
