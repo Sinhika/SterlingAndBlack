@@ -7,7 +7,7 @@ gradle/
 gradlew.bat
 bin/
 build.number
-*/.cache
+/*/.cache
 
 # Eclipse
 .settings/
