@@ -12,13 +12,18 @@ public class ModTags
 
     public static class Items
     {
-        public static final Tag<Item> INGOTS_FOO = forgeTag("ingots/foo");
-        public static final Tag<Item> NUGGETS_FOO = forgeTag("nuggets/foo");
-        public static final Tag<Item> BLOCK_FOO = forgeTag("storage_blocks/foo");
-        public static final Tag<Item> RODS_FOO = forgeTag("rods/foo");
+        public static final Tag<Item> INGOTS_STERLING_STEEL = forgeTag("ingots/sterling_steel");
+        public static final Tag<Item> NUGGETS_STERLING_STEEL = forgeTag("nuggets/sterling_steel");
+        public static final Tag<Item> BLOCK_STERLING_STEEL = forgeTag("storage_blocks/sterling_steel");
+        public static final Tag<Item> RODS_STERLING_STEEL = forgeTag("rods/sterling_steel");
+        
+        public static final Tag<Item> INGOTS_BLACK_SILVER = forgeTag("ingots/black_silver");
+        public static final Tag<Item> NUGGETS_BLACK_SILVER = forgeTag("nuggets/black_silver");
+        public static final Tag<Item> BLOCK_BLACK_SILVER = forgeTag("storage_blocks/black_silver");
+        public static final Tag<Item> RODS_BLACK_SILVER = forgeTag("rods/black_silver");
         
 //        private static Tag<Item> tag(String name) {
-//            return new ItemTags.Wrapper(new ResourceLocation(OnlySilver.MODID, name));
+//            return new ItemTags.Wrapper(new ResourceLocation(SterlingAndBlack.MODID, name));
 //        }
 
         private static Tag<Item> forgeTag(String name) {
@@ -29,10 +34,11 @@ public class ModTags
     
     public static class Blocks
     {
-        public static final Tag<Block> BLOCK_FOO = forgeTag("storage_blocks/foo");
+        public static final Tag<Block> BLOCK_STERLING_STEEL = forgeTag("storage_blocks/sterling_steel");
+        public static final Tag<Block> BLOCK_BLACK_SILVER = forgeTag("storage_blocks/black_silver");
         
 //        private static Tag<Block> tag(String name) {
-//            return new BlockTags.Wrapper(new ResourceLocation(OnlySilver.MODID, name));
+//            return new BlockTags.Wrapper(new ResourceLocation(SterlingAndBlack.MODID, name));
 //        }
 
         private static Tag<Block> forgeTag(String name) {
