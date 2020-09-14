@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,7 +41,7 @@ public class SterlingSteelArmorItem extends ArmorItem
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("sterlingblack.sterlingsteel_armor.info"));
+        tooltip.add(new TranslationTextComponent("sterlingblack.sterlingsteel_armor.info").applyTextStyle(TextFormatting.GREEN));
     }
 
     @Override
