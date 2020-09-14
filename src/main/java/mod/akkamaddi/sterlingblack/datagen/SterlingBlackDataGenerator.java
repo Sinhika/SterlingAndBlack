@@ -28,7 +28,7 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
  * @author Sinhika
  */
 @EventBusSubscriber(modid = SterlingAndBlack.MODID, bus = MOD)
-public class SimpleDataGenerator
+public class SterlingBlackDataGenerator
 {
 
     /**
@@ -69,6 +69,7 @@ public class SimpleDataGenerator
         
         protected void registerToolRecipes(Consumer<IFinishedRecipe> consumer)
         {
+            // STERLING_STEEL
             // axe
             ShapedRecipeBuilder.shapedRecipe(ModItems.sterling_steel_axe.get())
                 .key('S', ModTags.Items.INGOTS_STERLING_STEEL)
@@ -119,10 +120,62 @@ public class SimpleDataGenerator
                 .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_STERLING_STEEL))
                 .build(consumer);
             
-        } // end registerToolRecipes()
+            // BLACK_SILVER
+            // axe
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_axe.get())
+                .key('S', ModTags.Items.INGOTS_BLACK_SILVER)
+                .key('T', Tags.Items.RODS_WOODEN)
+                .patternLine("SS")
+                .patternLine("ST")
+                .patternLine(" T")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+            // hoe
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_hoe.get())
+                .key('S', ModTags.Items.INGOTS_BLACK_SILVER)
+                .key('T', Tags.Items.RODS_WOODEN)
+                .patternLine("SS")
+                .patternLine(" T")
+                .patternLine(" T")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+            // pickaxe
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_pickaxe.get())
+                .key('S', ModTags.Items.INGOTS_BLACK_SILVER)
+                .key('T', Tags.Items.RODS_WOODEN)
+                .patternLine("SSS")
+                .patternLine(" T ")
+                .patternLine(" T ")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+            // sword
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_sword.get())
+                .key('S', ModTags.Items.INGOTS_BLACK_SILVER)
+                .key('T', Tags.Items.RODS_WOODEN)
+                .patternLine(" S")
+                .patternLine(" S")
+                .patternLine(" T")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+            // shovel
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_shovel.get())
+                .key('S', ModTags.Items.INGOTS_BLACK_SILVER)
+                .key('T', Tags.Items.RODS_WOODEN)
+                .patternLine(" S")
+                .patternLine(" T")
+                .patternLine(" T")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+       } // end registerToolRecipes()
         
         protected void registerArmorRecipes(Consumer<IFinishedRecipe> consumer)
         {
+            // STERLING_STEEL
             ShapedRecipeBuilder.shapedRecipe(ModItems.sterling_steel_helmet.get())
                 .key('S', ModItems.sterling_steel_ingot.get())
                 .patternLine("SSS")
@@ -151,11 +204,42 @@ public class SimpleDataGenerator
                 .patternLine("S S")
                 .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_STERLING_STEEL))
                 .build(consumer);
-                
+
+            // BLACK_SILVER
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_helmet.get())
+                .key('S', ModItems.black_silver_ingot.get())
+                .patternLine("SSS")
+                .patternLine("S S")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_chestplate.get())
+                .key('S', ModItems.black_silver_ingot.get())
+                .patternLine("S S")
+                .patternLine("SSS")
+                .patternLine("SSS")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_leggings.get())
+                .key('S', ModItems.black_silver_ingot.get())
+                .patternLine("SSS")
+                .patternLine("S S")
+                .patternLine("S S")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_boots.get())
+                .key('S', ModItems.black_silver_ingot.get())
+                .patternLine("   ")
+                .patternLine("S S")
+                .patternLine("S S")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
         } // end registerArmorRecipes()
         
         protected void registerStorageRecipes(Consumer<IFinishedRecipe> consumer)
         {
+            // STERLING_STEEL
             // block <=> ingots
             ShapelessRecipeBuilder.shapelessRecipe(ModItems.sterling_steel_ingot.get(), 9)
                 .addIngredient(ModBlocks.sterling_steel_block.get())
@@ -181,6 +265,33 @@ public class SimpleDataGenerator
                 .patternLine("SSS")
                 .addCriterion("has_item", hasItem(ModTags.Items.NUGGETS_STERLING_STEEL))
                 .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "sterling_steel_ingot_from_nugget"));
+            
+            // BLACK_SILVER
+            ShapelessRecipeBuilder.shapelessRecipe(ModItems.black_silver_ingot.get(), 9)
+                .addIngredient(ModBlocks.black_silver_block.get())
+                .addCriterion("has_item", hasItem(ModTags.Items.BLOCK_BLACK_SILVER))
+                .build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ModBlocks.black_silver_block.get())
+                .key('S', ModItems.black_silver_ingot.get())
+                .patternLine("SSS")
+                .patternLine("SSS")
+                .patternLine("SSS")
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            
+            // ingot <=> nuggets
+            ShapelessRecipeBuilder.shapelessRecipe(ModItems.black_silver_nugget.get(), 9)
+                .addIngredient(ModItems.black_silver_ingot.get())
+                .addCriterion("has_item", hasItem(ModTags.Items.INGOTS_BLACK_SILVER))
+                .build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ModItems.black_silver_ingot.get())
+                .key('S', ModItems.black_silver_nugget.get())
+                .patternLine("SSS")
+                .patternLine("SSS")
+                .patternLine("SSS")
+                .addCriterion("has_item", hasItem(ModTags.Items.NUGGETS_BLACK_SILVER))
+                .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_ingot_from_nugget"));
+            
         } // end registerStorageRecipes()
         
         protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
@@ -193,6 +304,7 @@ public class SimpleDataGenerator
             // No ores in this mod.
             
             // vanilla recycling, tools/armor => nuggets
+            // STERLING_STEEL
             // smelting
             CookingRecipeBuilder
                     .smeltingRecipe(
@@ -220,6 +332,32 @@ public class SimpleDataGenerator
                     .addCriterion("has_item", hasItem(ModItems.sterling_steel_boots.get()))
                     .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "sterling_steel_nugget_from_blasting_armor"));
 
+            // BLACK_SILVER
+            CookingRecipeBuilder
+                .smeltingRecipe(
+                        Ingredient.fromItems(ModItems.black_silver_axe.get(),
+                                ModItems.black_silver_hoe.get(), ModItems.black_silver_pickaxe.get(),
+                                ModItems.black_silver_shovel.get(), ModItems.black_silver_sword.get()),
+                        ModItems.black_silver_nugget.get(), 0.4F, 200)
+                .addCriterion("has_item", hasItem(ModItems.black_silver_axe.get()))
+                .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_nugget_from_smelting_tools"));
+    
+            CookingRecipeBuilder
+                .smeltingRecipe(
+                        Ingredient.fromItems(ModItems.black_silver_boots.get(), ModItems.black_silver_chestplate.get(),
+                                ModItems.black_silver_helmet.get(), ModItems.black_silver_leggings.get()),
+                        ModItems.black_silver_nugget.get(), 0.4F, 200)
+                .addCriterion("has_item", hasItem(ModItems.black_silver_boots.get()))
+                .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_nugget_from_smelting_armor"));
+      
+            // blasting
+            CookingRecipeBuilder
+                .blastingRecipe(
+                        Ingredient.fromItems(ModItems.black_silver_boots.get(), ModItems.black_silver_chestplate.get(),
+                                ModItems.black_silver_helmet.get(), ModItems.black_silver_leggings.get()),
+                        ModItems.black_silver_nugget.get(), 0.4F, 100)
+                .addCriterion("has_item", hasItem(ModItems.black_silver_boots.get()))
+                .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "black_silver_nugget_from_blasting_armor"));
         } // end registerFurnaceRecipes()
 
     } // end subclass SterlingAndBlackDataGenerator$Recipes.
