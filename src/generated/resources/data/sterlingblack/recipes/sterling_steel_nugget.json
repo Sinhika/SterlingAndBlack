@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sterlingblack:sterling_steel_ingot"
+    }
+  ],
+  "result": {
+    "item": "sterlingblack:sterling_steel_nugget",
+    "count": 9
+  }
+}

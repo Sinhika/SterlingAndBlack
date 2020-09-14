@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S S",
+    "   "
+  ],
+  "key": {
+    "S": {
+      "item": "sterlingblack:sterling_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "sterlingblack:sterling_steel_helmet"
+  }
+}

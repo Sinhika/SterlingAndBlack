@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "sterlingblack:black_silver_axe"
+    },
+    {
+      "item": "sterlingblack:black_silver_hoe"
+    },
+    {
+      "item": "sterlingblack:black_silver_pickaxe"
+    },
+    {
+      "item": "sterlingblack:black_silver_shovel"
+    },
+    {
+      "item": "sterlingblack:black_silver_sword"
+    }
+  ],
+  "result": "sterlingblack:black_silver_nugget",
+  "experience": 0.4,
+  "cookingtime": 100
+}
