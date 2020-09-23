@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycling_enabled",
+          "type": "sterlingblack:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "sterlingblack:sterling_steel_chestplate"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_leggings"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "sterlingblack:large_sterling_steel_chunk",
+          "count": 2
+        },
+        "cookingtime": 600,
+        "experience": 30.0
+      }
+    }
+  ]
+}

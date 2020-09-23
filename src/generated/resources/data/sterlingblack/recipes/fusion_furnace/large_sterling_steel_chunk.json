@@ -1,0 +1,19 @@
+{
+  "type": "fusion:alloying",
+  "inputs": [
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "output": {
+    "item": "sterlingblack:large_sterling_steel_chunk"
+  },
+  "cookingtime": 600,
+  "experience": 24.0
+}

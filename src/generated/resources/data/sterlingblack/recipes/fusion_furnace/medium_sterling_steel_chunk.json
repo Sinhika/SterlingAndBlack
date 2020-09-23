@@ -1,0 +1,19 @@
+{
+  "type": "fusion:alloying",
+  "inputs": [
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "output": {
+    "item": "sterlingblack:medium_sterling_steel_chunk"
+  },
+  "cookingtime": 600,
+  "experience": 12.0
+}

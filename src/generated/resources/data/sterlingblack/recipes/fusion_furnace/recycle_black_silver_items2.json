@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycling_enabled",
+          "type": "sterlingblack:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "sterlingblack:black_silver_chestplate"
+            },
+            {
+              "item": "sterlingblack:black_silver_leggings"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "item": "minecraft:lava_bucket"
+        },
+        "output": {
+          "item": "sterlingblack:large_black_silver_chunk",
+          "count": 2
+        },
+        "cookingtime": 600,
+        "experience": 40.0
+      }
+    }
+  ]
+}

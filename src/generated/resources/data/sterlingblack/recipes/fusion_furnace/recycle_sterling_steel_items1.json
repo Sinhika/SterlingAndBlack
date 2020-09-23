@@ -1,0 +1,52 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycling_enabled",
+          "type": "sterlingblack:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "sterlingblack:sterling_steel_axe"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_boots"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_helmet"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_hoe"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_pickaxe"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_shovel"
+            },
+            {
+              "item": "sterlingblack:sterling_steel_sword"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "sterlingblack:large_sterling_steel_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 15.0
+      }
+    }
+  ]
+}

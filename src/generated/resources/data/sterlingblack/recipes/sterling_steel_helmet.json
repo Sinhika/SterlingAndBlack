@@ -7,7 +7,7 @@
   ],
   "key": {
     "S": {
-      "item": "sterlingblack:sterling_steel_ingot"
+      "tag": "forge:ingots/sterling_steel"
     }
   },
   "result": {

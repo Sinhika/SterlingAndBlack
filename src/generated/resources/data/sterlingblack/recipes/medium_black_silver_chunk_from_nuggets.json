@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "sterlingblack:black_silver_nugget"
+    }
+  },
+  "result": {
+    "item": "sterlingblack:medium_black_silver_chunk"
+  }
+}

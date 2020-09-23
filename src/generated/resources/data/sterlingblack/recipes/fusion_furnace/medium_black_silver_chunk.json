@@ -1,0 +1,19 @@
+{
+  "type": "fusion:alloying",
+  "inputs": [
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "tag": "forge:gems/onyx"
+    }
+  ],
+  "catalyst": {
+    "item": "sterlingblack:medium_sterling_steel_chunk"
+  },
+  "output": {
+    "item": "sterlingblack:medium_black_silver_chunk"
+  },
+  "cookingtime": 600,
+  "experience": 18.0
+}

@@ -41,7 +41,7 @@ public final class ModEventSubscriber
     @SubscribeEvent
     public static void onCommonSetup(final FMLCommonSetupEvent event)
     {
-        if (OS.isModLoaded()) 
+        if (OnlySilverContents.isModLoaded()) 
         {
             OS.registerSilverPredicate(new IsSterlingBlackItem());
         } // end-if OnlySilver

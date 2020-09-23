@@ -1,0 +1,19 @@
+{
+  "type": "fusion:alloying",
+  "inputs": [
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "catalyst": {
+    "tag": "minecraft:coals"
+  },
+  "output": {
+    "item": "sterlingblack:sterling_steel_nugget"
+  },
+  "cookingtime": 600,
+  "experience": 6.0
+}

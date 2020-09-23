@@ -1,0 +1,52 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycling_enabled",
+          "type": "sterlingblack:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "sterlingblack:black_silver_axe"
+            },
+            {
+              "item": "sterlingblack:black_silver_boots"
+            },
+            {
+              "item": "sterlingblack:black_silver_helmet"
+            },
+            {
+              "item": "sterlingblack:black_silver_hoe"
+            },
+            {
+              "item": "sterlingblack:black_silver_pickaxe"
+            },
+            {
+              "item": "sterlingblack:black_silver_shovel"
+            },
+            {
+              "item": "sterlingblack:black_silver_sword"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "item": "minecraft:lava_bucket"
+        },
+        "output": {
+          "item": "sterlingblack:large_black_silver_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 20.0
+      }
+    }
+  ]
+}

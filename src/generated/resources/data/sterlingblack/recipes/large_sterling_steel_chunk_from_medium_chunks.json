@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sterlingblack:medium_sterling_steel_chunk"
+    },
+    {
+      "item": "sterlingblack:medium_sterling_steel_chunk"
+    },
+    {
+      "item": "sterlingblack:sterling_steel_nugget"
+    }
+  ],
+  "result": {
+    "item": "sterlingblack:large_sterling_steel_chunk"
+  }
+}

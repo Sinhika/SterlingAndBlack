@@ -62,12 +62,12 @@ public class OnlySilverContents
         }
     } // end OnlySilverContents ctor
     
-    public boolean isModLoaded()
+    public static boolean isModLoaded()
     {
         return ModList.get().isLoaded(getModId());
     }
 
-    public String getModId() {
+    public static String getModId() {
         return "onlysilver";
     }
     

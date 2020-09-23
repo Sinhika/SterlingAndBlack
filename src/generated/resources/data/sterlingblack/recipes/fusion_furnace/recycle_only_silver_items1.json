@@ -1,0 +1,70 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "silver_recycling_enabled",
+              "type": "sterlingblack:flag"
+            },
+            {
+              "modid": "onlysilver",
+              "type": "forge:mod_loaded"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "onlysilver:silver_wand"
+            },
+            {
+              "item": "onlysilver:silver_rod"
+            },
+            {
+              "item": "onlysilver:silver_bow"
+            },
+            {
+              "item": "onlysilver:silver_sword"
+            },
+            {
+              "item": "onlysilver:silver_pickaxe"
+            },
+            {
+              "item": "onlysilver:silver_axe"
+            },
+            {
+              "item": "onlysilver:silver_shovel"
+            },
+            {
+              "item": "onlysilver:silver_hoe"
+            },
+            {
+              "item": "onlysilver:silver_helmet"
+            },
+            {
+              "item": "onlysilver:silver_boots"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "onlysilver:silver_ore"
+        },
+        "cookingtime": 600,
+        "experience": 10.0
+      }
+    }
+  ]
+}

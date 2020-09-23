@@ -1,0 +1,47 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "silver_recycling_enabled",
+              "type": "sterlingblack:flag"
+            },
+            {
+              "modid": "onlysilver",
+              "type": "forge:mod_loaded"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "onlysilver:silver_chestplate"
+            },
+            {
+              "item": "onlysilver:silver_leggings"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "onlysilver:silver_ore",
+          "count": 2
+        },
+        "cookingtime": 600,
+        "experience": 20.0
+      }
+    }
+  ]
+}

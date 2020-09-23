@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "sterlingblack:black_silver_axe"
+    },
+    {
+      "item": "sterlingblack:black_silver_boots"
+    },
+    {
+      "item": "sterlingblack:black_silver_chestplate"
+    },
+    {
+      "item": "sterlingblack:black_silver_helmet"
+    },
+    {
+      "item": "sterlingblack:black_silver_hoe"
+    },
+    {
+      "item": "sterlingblack:black_silver_leggings"
+    },
+    {
+      "item": "sterlingblack:black_silver_pickaxe"
+    },
+    {
+      "item": "sterlingblack:black_silver_shovel"
+    },
+    {
+      "item": "sterlingblack:black_silver_sword"
+    }
+  ],
+  "result": "sterlingblack:black_silver_nugget",
+  "experience": 0.4,
+  "cookingtime": 200
+}
