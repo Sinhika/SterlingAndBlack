@@ -87,6 +87,9 @@ public final class ModEventSubscriber
 		if (config.getSpec() == ConfigHolder.SERVER_SPEC) {
 			ConfigHelper.bakeServer(config);
 		}
+        if (config.getSpec() == ConfigHolder.CLIENT_SPEC) {
+            ConfigHelper.bakeClient(config);
+        }
 	} // onModConfigEvent
 
 	

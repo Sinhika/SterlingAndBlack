@@ -24,7 +24,7 @@ public class SterlingAndBlack
 
     public SterlingAndBlack()
     {
-        LOGGER.info("Hello from SimpleMod!");
+        LOGGER.info("Hello from Sterling and Black!");
         final ModLoadingContext modLoadingContext = ModLoadingContext.get();
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModBlocks.BLOCKS.register(modEventBus);
@@ -32,6 +32,7 @@ public class SterlingAndBlack
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
-    } // end SimpleOres()
+        modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);   
+    } // end SterlingAndBlack()
 
 } // end class SimpleOres
