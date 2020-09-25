@@ -16,13 +16,16 @@ import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
 import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simpleores.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simpleores.api.datagen.RecipeSetBuilder;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -238,6 +241,15 @@ public class SterlingBlackDataGenerator
         
         protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
         {
+            // rails
+            ShapedRecipeBuilder.shapedRecipe(Blocks.RAIL.asItem(), 24)
+                    .key('X', Ingredient.fromItems(ModItems.sterling_steel_ingot.get()))
+                    .key('Y', Ingredient.fromTag(Tags.Items.RODS_WOODEN))
+                    .patternLine("X X")
+                    .patternLine("XYX")
+                    .patternLine("X X")
+                    .addCriterion("hasItem", hasItem(ModItems.sterling_steel_ingot.get()))
+                    .build(consumer, "rails_with_sterling_silver");
         } // end registerMiscRecipes()
 
         protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)
