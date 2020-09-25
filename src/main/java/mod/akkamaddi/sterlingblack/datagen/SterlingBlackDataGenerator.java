@@ -249,7 +249,7 @@ public class SterlingBlackDataGenerator
                     .patternLine("XYX")
                     .patternLine("X X")
                     .addCriterion("hasItem", hasItem(ModItems.sterling_steel_ingot.get()))
-                    .build(consumer, "rails_with_sterling_silver");
+                    .build(consumer, new ResourceLocation(SterlingAndBlack.MODID, "rails_with_sterling_silver"));
         } // end registerMiscRecipes()
 
         protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)

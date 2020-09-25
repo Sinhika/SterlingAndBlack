@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:rails_with_sterling_silver"
+      "sterlingblack:rails_with_sterling_silver"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:rails_with_sterling_silver"
+        "recipe": "sterlingblack:rails_with_sterling_silver"
       }
     }
   },
