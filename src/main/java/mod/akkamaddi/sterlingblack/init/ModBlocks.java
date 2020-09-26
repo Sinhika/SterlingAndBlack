@@ -25,7 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModBlocks
 {
     public static final DeferredRegister<Block> BLOCKS = 
-           DeferredRegister.create(ForgeRegistries.BLOCKS, SterlingAndBlack.MODID);
+           new DeferredRegister<Block>(ForgeRegistries.BLOCKS, SterlingAndBlack.MODID);
 
     // Metal Blocks
     public static final RegistryObject<SterlingSteelBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",

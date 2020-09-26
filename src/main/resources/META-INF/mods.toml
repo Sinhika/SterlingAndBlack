@@ -3,8 +3,8 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[31,)" #mandatory
-issueTrackerURL="https://github.com/Sinhika/simplemod/issues"
+loaderVersion="[28,)" #mandatory
+issueTrackerURL="https://github.com/Sinhika/SterlingAndBlack/issues"
 
 [[mods]]
 modId="sterlingblack"
@@ -20,35 +20,35 @@ description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simp
 [[dependencies.sterlingblack]]
     modId="forge"
     mandatory=true
-    versionRange="[31.2.26,)"
+    versionRange="[28.2.4,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sterlingblack]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sterlingblack]]
     modId="simpleores"
     mandatory=true
-    versionRange="[1.15.2-2.1.9.2,]"
+    versionRange="[1.14.4-2.1.12.2,]"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.15.2-2.5.12.1,]"
+    versionRange="[1.14.4-2.5.11,]"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="onlysilver"
     mandatory=false
-    versionRange="[1.15.2-2.1.0,]"
+    versionRange="[1.14.4-2.9.0,]"
     ordering="BEFORE"
     side="BOTH"    
     

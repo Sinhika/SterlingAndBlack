@@ -30,7 +30,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModItems 
 {
     public static final DeferredRegister<Item> ITEMS = 
-            DeferredRegister.create(ForgeRegistries.ITEMS, SterlingAndBlack.MODID);
+            new DeferredRegister<Item>(ForgeRegistries.ITEMS, SterlingAndBlack.MODID);
 
     // ingots and nuggets
     public static final RegistryObject<Item> sterling_steel_ingot = ITEMS.register("sterling_steel_ingot", 
