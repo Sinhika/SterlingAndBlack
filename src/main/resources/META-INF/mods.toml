@@ -34,7 +34,7 @@ description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simp
 [[dependencies.sterlingblack]]
     modId="simpleores"
     mandatory=true
-    versionRange="[1.14.4-2.1.12.2,]"
+    versionRange="[1.14.4-2.0.12.2,]"
     ordering="NONE"
     side="BOTH"    
 
