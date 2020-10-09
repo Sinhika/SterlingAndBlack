@@ -109,7 +109,8 @@ repositories {
 
 dependencies {
     compile fg.deobf("mod.zotmc.onlysilver:OnlySilver:${onlysilver_version}")
-    compile fg.deobf("mod.alexndr.simpleores:SimpleOres2:${simpleores_version}")
+    compile fg.deobf("mod.alexndr.simplecorelib:SimpleCoreLib:${simplecorelib_version}")
+//    compile fg.deobf("mod.alexndr.simpleores:SimpleOres2:${simpleores_version}")
     compile fg.deobf("mod.alexndr.fusion:Fusion:${fusion_version}")
 }
 
