@@ -91,10 +91,10 @@ public final class ModItems
 
     // hoes
     public static final RegistryObject<HoeItem> sterling_steel_hoe = ITEMS.register("sterling_steel_hoe",
-            () -> new HoeItem(SterlingBlackItemTier.STERLING_STEEL,-2.0F,
+            () -> new HoeItem(SterlingBlackItemTier.STERLING_STEEL, -2, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> black_silver_hoe = ITEMS.register("black_silver_hoe",
-            () -> new HoeItem(SterlingBlackItemTier.BLACK_SILVER,-3.0F,
+            () -> new HoeItem(SterlingBlackItemTier.BLACK_SILVER, -5, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // ARMOR

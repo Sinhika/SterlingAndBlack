@@ -14,7 +14,7 @@ import mod.akkamaddi.sterlingblack.helpers.IsSterlingBlackItem;
 import mod.akkamaddi.sterlingblack.helpers.OnlySilverContents;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.akkamaddi.sterlingblack.init.ModTabGroups;
-import mod.alexndr.simpleores.api.config.FlagCondition;
+import mod.alexndr.simplecorelib.config.FlagCondition;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;

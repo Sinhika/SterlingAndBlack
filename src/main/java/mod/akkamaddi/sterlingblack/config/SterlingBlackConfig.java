@@ -3,7 +3,7 @@ package mod.akkamaddi.sterlingblack.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import mod.alexndr.simpleores.api.config.ISimpleConfig;
+import mod.alexndr.simplecorelib.config.ISimpleConfig;
 
 public class SterlingBlackConfig implements ISimpleConfig
 {

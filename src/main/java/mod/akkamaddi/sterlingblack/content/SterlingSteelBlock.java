@@ -3,13 +3,13 @@ package mod.akkamaddi.sterlingblack.content;
 import java.util.Random;
 
 import mod.akkamaddi.sterlingblack.config.SterlingBlackConfig;
-import mod.alexndr.simpleores.api.content.SimpleMetalBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SterlingSteelBlock extends SimpleMetalBlock
+public class SterlingSteelBlock extends Block
 {
     public static final int sterlingSteelLightLevel = (int) (0.8F * 15.0F);
     

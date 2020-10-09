@@ -1,51 +1,34 @@
 package mod.akkamaddi.sterlingblack.init;
 
+import mod.alexndr.simplecorelib.helpers.TagUtils;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tags.ITag;
 
 public class ModTags
 {
 
     public static class Items
     {
-        public static final Tag<Item> INGOTS_STERLING_STEEL = forgeTag("ingots/sterling_steel");
-        public static final Tag<Item> NUGGETS_STERLING_STEEL = forgeTag("nuggets/sterling_steel");
-        public static final Tag<Item> BLOCK_STERLING_STEEL = forgeTag("storage_blocks/sterling_steel");
-        public static final Tag<Item> RODS_STERLING_STEEL = forgeTag("rods/sterling_steel");
+        public static final ITag.INamedTag<Item> INGOTS_STERLING_STEEL = TagUtils.forgeTag("ingots/sterling_steel");
+        public static final ITag.INamedTag<Item> NUGGETS_STERLING_STEEL = TagUtils.forgeTag("nuggets/sterling_steel");
+        public static final ITag.INamedTag<Item> BLOCK_STERLING_STEEL = TagUtils.forgeTag("storage_blocks/sterling_steel");
+        public static final ITag.INamedTag<Item> RODS_STERLING_STEEL = TagUtils.forgeTag("rods/sterling_steel");
         
-        public static final Tag<Item> INGOTS_BLACK_SILVER = forgeTag("ingots/black_silver");
-        public static final Tag<Item> NUGGETS_BLACK_SILVER = forgeTag("nuggets/black_silver");
-        public static final Tag<Item> BLOCK_BLACK_SILVER = forgeTag("storage_blocks/black_silver");
+        public static final ITag.INamedTag<Item> INGOTS_BLACK_SILVER = TagUtils.forgeTag("ingots/black_silver");
+        public static final ITag.INamedTag<Item> NUGGETS_BLACK_SILVER = TagUtils.forgeTag("nuggets/black_silver");
+        public static final ITag.INamedTag<Item> BLOCK_BLACK_SILVER = TagUtils.forgeTag("storage_blocks/black_silver");
         
-        public static final Tag<Item> INGOTS_SILVER = forgeTag("ingots/silver");
-        public static final Tag<Item> GEM_ONYX = forgeTag("gems/onyx");
+        public static final ITag.INamedTag<Item> INGOTS_SILVER = TagUtils.forgeTag("ingots/silver");
+        public static final ITag.INamedTag<Item> GEM_ONYX = TagUtils.forgeTag("gems/onyx");
         
-//        private static Tag<Item> tag(String name) {
-//            return new ItemTags.Wrapper(new ResourceLocation(SterlingAndBlack.MODID, name));
-//        }
-
-        private static Tag<Item> forgeTag(String name) {
-            return new ItemTags.Wrapper(new ResourceLocation("forge", name));
-        }
     } // end class Items
     
     
     public static class Blocks
     {
-        public static final Tag<Block> BLOCK_STERLING_STEEL = forgeTag("storage_blocks/sterling_steel");
-        public static final Tag<Block> BLOCK_BLACK_SILVER = forgeTag("storage_blocks/black_silver");
-        
-//        private static Tag<Block> tag(String name) {
-//            return new BlockTags.Wrapper(new ResourceLocation(SterlingAndBlack.MODID, name));
-//        }
-
-        private static Tag<Block> forgeTag(String name) {
-            return new BlockTags.Wrapper(new ResourceLocation("forge", name));
-        }
+        public static final ITag.INamedTag<Block> BLOCK_STERLING_STEEL = TagUtils.forgeBlockTag("storage_blocks/sterling_steel");
+        public static final ITag.INamedTag<Block> BLOCK_BLACK_SILVER = TagUtils.forgeBlockTag("storage_blocks/black_silver");
     } // end class Blocks
 
     
