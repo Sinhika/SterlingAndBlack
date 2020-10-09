@@ -9,6 +9,7 @@ bin/
 build.number
 /*/.cache
 src/generated/resources/.cache/
+logs/
 
 # Eclipse
 .settings/*
