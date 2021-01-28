@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[35,)" #mandatory
+loaderVersion="[36,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/SterlingAndBlack/issues"
 license="LGPL 3"
 
@@ -11,7 +11,7 @@ license="LGPL 3"
 modId="sterlingblack"
 version="${version}"
 displayName="Sterling and Black"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.15/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.16/update.json"
 displayURL="CurseForge URL"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
@@ -21,35 +21,35 @@ description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simp
 [[dependencies.sterlingblack]]
     modId="forge"
     mandatory=true
-    versionRange="[35.0.0,)"
+    versionRange="[36.0.0,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sterlingblack]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sterlingblack]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.4-2.0.2.0,]"
+    versionRange="[1.16.5-2.0.5.0,1.16.5-2.0.6.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.16.4-2.7.1.0,]"
+    versionRange="[1.16.5-2.7.2.0, 1.16.5-2.7.3.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="onlysilver"
     mandatory=false
-    versionRange="[1.16.4-3.2.1.0,]"
+    versionRange="[1.16.5-3.2.3.0,1.16.5-3.2.4.0)"
     ordering="BEFORE"
     side="BOTH"    
     
