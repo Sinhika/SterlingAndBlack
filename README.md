@@ -11,6 +11,8 @@ TODO List
 - Add Silent Mechanisms support.
 - Add Silent Gear support.
 - Make a better CurseForge logo.
+- add lower-end sterlingblack items to loot/random chance for injected loot, instead of 100% guaranteed.
+
 
 License
 -------
