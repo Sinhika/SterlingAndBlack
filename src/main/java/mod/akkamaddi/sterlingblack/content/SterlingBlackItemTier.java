@@ -9,8 +9,8 @@ import net.minecraft.util.LazyValue;
 
 public enum SterlingBlackItemTier implements IItemTier
 {
-   STERLING_STEEL(3, 660, 10.0F, 2.0F, 26, ()->{ return Ingredient.fromItems( ModItems.sterling_steel_ingot.get()); }),
-   BLACK_SILVER(5, 3460, 16.0F, 6.0F, 22, ()->{ return Ingredient.fromItems( ModItems.black_silver_ingot.get()); });
+   STERLING_STEEL(3, 660, 10.0F, 2.0F, 26, ()->{ return Ingredient.of( ModItems.sterling_steel_ingot.get()); }),
+   BLACK_SILVER(5, 3460, 16.0F, 6.0F, 22, ()->{ return Ingredient.of( ModItems.black_silver_ingot.get()); });
 
    private final int harvestLevel;
    private final int maxUses;
@@ -31,32 +31,32 @@ public enum SterlingBlackItemTier implements IItemTier
    }
 
    @Override
-   public int getMaxUses() {
+   public int getUses() {
       return this.maxUses;
    }
 
    @Override
-   public float getEfficiency() {
+   public float getSpeed() {
       return this.efficiency;
    }
 
    @Override
-   public float getAttackDamage() {
+   public float getAttackDamageBonus() {
       return this.attackDamage;
    }
 
    @Override
-   public int getHarvestLevel() {
+   public int getLevel() {
       return this.harvestLevel;
    }
 
    @Override
-   public int getEnchantability() {
+   public int getEnchantmentValue() {
       return this.enchantability;
    }
 
    @Override
-   public Ingredient getRepairMaterial() {
-      return this.repairMaterial.getValue();
+   public Ingredient getRepairIngredient() {
+      return this.repairMaterial.get();
    }
 }  // end class SimpleOresItemTier

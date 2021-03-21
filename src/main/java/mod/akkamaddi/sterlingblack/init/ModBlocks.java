@@ -29,13 +29,13 @@ public final class ModBlocks
 
     // Metal Blocks
     public static final RegistryObject<SterlingSteelBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",
-            () -> new SterlingSteelBlock(Block.Properties.create(Material.IRON)
-                    .hardnessAndResistance(7.0F, 12.0F)
-                    .setLightLevel(LightUtils.setFixedLight(SterlingSteelBlock.sterlingSteelLightLevel))
+            () -> new SterlingSteelBlock(Block.Properties.of(Material.METAL)
+                    .strength(7.0F, 12.0F)
+                    .lightLevel(LightUtils.setFixedLight(SterlingSteelBlock.sterlingSteelLightLevel))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<Block> black_silver_block = BLOCKS.register("black_silver_block",
-            () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.BLACK)
-                    .hardnessAndResistance(12.0F, 26.0F)
+            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK)
+                    .strength(12.0F, 26.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 
 }  // end class ModBlocks

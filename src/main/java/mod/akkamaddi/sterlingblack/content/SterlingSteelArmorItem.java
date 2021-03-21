@@ -36,9 +36,9 @@ public class SterlingSteelArmorItem extends ArmorItem
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("sterlingblack.sterlingsteel_armor.info"));
     }
 
@@ -47,13 +47,13 @@ public class SterlingSteelArmorItem extends ArmorItem
     {
         super.onArmorTick(stack, world, player);
         
-        if (ModUtil.isPlayerWearingPartialSet(player, getArmorMaterial(), jump_list ))
+        if (ModUtil.isPlayerWearingPartialSet(player, getMaterial(), jump_list ))
         {
-            player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 2, jumpBoostFactor, false, false));
+            player.addEffect(new EffectInstance(Effects.JUMP, 2, jumpBoostFactor, false, false));
         }
-        if (ModUtil.isPlayerWearingPartialSet(player, getArmorMaterial(), move_list ))
+        if (ModUtil.isPlayerWearingPartialSet(player, getMaterial(), move_list ))
         {
-            player.addPotionEffect(new EffectInstance(Effects.SPEED, 2, moveSpeedFactor, false, false));
+            player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 2, moveSpeedFactor, false, false));
         }
     } // onArmorTick()
 

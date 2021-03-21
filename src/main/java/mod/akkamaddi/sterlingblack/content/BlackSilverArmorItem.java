@@ -28,16 +28,16 @@ public class BlackSilverArmorItem extends ArmorItem
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
     {
         super.onArmorTick(stack, world, player);
-        if (ModUtil.isPlayerWearingFullSet(player, getArmorMaterial()))
+        if (ModUtil.isPlayerWearingFullSet(player, getMaterial()))
         {
-            player.addPotionEffect(new EffectInstance(Effects.HASTE, 2, mining_boost, false, false));
+            player.addEffect(new EffectInstance(Effects.DIG_SPEED, 2, mining_boost, false, false));
         }
     } // end onArmorTick()
 
     @Override
-    public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("sterlingblack.blacksilver_armor.info"));
     }
 

@@ -9,7 +9,7 @@ license="LGPL 3"
 
 [[mods]]
 modId="sterlingblack"
-version="${version}"
+version="${file.jarVersion}"
 displayName="Sterling and Black"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.16/update.json"
 displayURL="CurseForge URL"
@@ -21,7 +21,7 @@ description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simp
 [[dependencies.sterlingblack]]
     modId="forge"
     mandatory=true
-    versionRange="[36.0.0,)"
+    versionRange="[36.1.0,)"
     ordering="NONE"
     side="BOTH"
 
@@ -35,21 +35,21 @@ description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simp
 [[dependencies.sterlingblack]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.5-2.0.5.0,1.16.5-2.0.6.0)"
+    versionRange="[1.16.5-2.0.7.0, 1.16.5-2.0.8.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.16.5-2.7.2.0, 1.16.5-2.7.3.0)"
+    versionRange="[1.16.5-2.7.3.0, 1.16.5-2.7.4.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.sterlingblack]]
     modId="onlysilver"
     mandatory=false
-    versionRange="[1.16.5-3.2.3.0,1.16.5-3.2.4.0)"
+    versionRange="[1.16.5-3.2.4.0, 1.16.5-3.2.5.0)"
     ordering="BEFORE"
     side="BOTH"    
 

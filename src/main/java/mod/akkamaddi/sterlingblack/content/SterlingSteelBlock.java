@@ -21,7 +21,7 @@ public class SterlingSteelBlock extends Block
     @Override
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (worldIn.isRemote && SterlingBlackConfig.makeMeSparkle)
+        if (worldIn.isClientSide && SterlingBlackConfig.makeMeSparkle)
         {
             super.animateTick(stateIn, worldIn, pos, rand);
             float f1 = (float)pos.getX() - 0.5F;

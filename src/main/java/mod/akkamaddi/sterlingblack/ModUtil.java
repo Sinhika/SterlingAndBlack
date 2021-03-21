@@ -26,14 +26,14 @@ public final class ModUtil
     public static boolean isPlayerWearingPartialSet(PlayerEntity player, @Nonnull IArmorMaterial material,
             @Nonnull Iterable<EquipmentSlotType> slot_list)
     {
-        List<ItemStack> armorList = (List<ItemStack>) player.getArmorInventoryList();
+        List<ItemStack> armorList = (List<ItemStack>) player.getArmorSlots();
         for (EquipmentSlotType slot : slot_list)
         {
             ItemStack stack = armorList.get(slot.getIndex());
             if (stack.isEmpty()) { return false; }
             if (!(stack.getItem() instanceof ArmorItem)) { return false; }
             ArmorItem piece = (ArmorItem) stack.getItem();
-            IArmorMaterial pieceMaterial = piece.getArmorMaterial();
+            IArmorMaterial pieceMaterial = piece.getMaterial();
             if (pieceMaterial != material)
             {
                 return false;
@@ -49,7 +49,7 @@ public final class ModUtil
      */
     public static boolean isPlayerWearingFullSet(PlayerEntity player, @Nonnull IArmorMaterial material)
     {
-        Iterable<ItemStack> armorList = player.getArmorInventoryList();
+        Iterable<ItemStack> armorList = player.getArmorSlots();
         for (ItemStack stack : armorList)
         {
             if (stack.isEmpty())
@@ -61,7 +61,7 @@ public final class ModUtil
                 return false;
             }
             ArmorItem piece = (ArmorItem) stack.getItem();
-            IArmorMaterial pieceMaterial = piece.getArmorMaterial();
+            IArmorMaterial pieceMaterial = piece.getMaterial();
             if (pieceMaterial != material)
             {
                 return false;
