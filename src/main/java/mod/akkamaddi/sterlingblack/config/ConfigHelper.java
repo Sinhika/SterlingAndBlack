@@ -12,6 +12,8 @@ public final class ConfigHelper
     public static void bakeServer(final ModConfig config) 
     {
         // general stuff
+        SterlingBlackConfig.addModLootToChests = ConfigHolder.SERVER.serverAddModLootToChests.get();
+        
         // recipe flags.
         SterlingBlackConfig.INSTANCE.putFlag("recycling_enabled", 
                 ConfigHolder.SERVER.serverEnableRecycling.get());

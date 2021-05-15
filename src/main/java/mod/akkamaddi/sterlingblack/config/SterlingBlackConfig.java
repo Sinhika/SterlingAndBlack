@@ -12,6 +12,7 @@ public class SterlingBlackConfig implements ISimpleConfig
     public static SterlingBlackConfig INSTANCE = new SterlingBlackConfig();
     
     // general
+    public static boolean addModLootToChests;
     
     // client-side
     public static boolean makeMeSparkle = true;
