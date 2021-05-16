@@ -29,6 +29,8 @@ public class SterlingBlackDataGenerator
         {
             gen.addProvider(new Recipes(gen));
             gen.addProvider(new FusionRecipes(gen));
+            gen.addProvider(new SterlingBlackLootTableProvider(gen));
+            gen.addProvider(new SterlingBlackLootInjectorProvider(gen));
         }
      } // end gatherData()
 } // end-class SterlingAndBlackDataGenerator
