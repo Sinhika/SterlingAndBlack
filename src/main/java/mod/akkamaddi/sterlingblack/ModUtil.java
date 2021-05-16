@@ -19,10 +19,12 @@ public final class ModUtil
 
     /**
      * Is player wearing a partial set of the same armor material?
+     * TODO: remove this when a new version of SimpleCoreLib with ArmorUtils.isPlayerWearingPartialSet() is released.
      * 
      * @param[in] slot_list list of slots required.
      * @return boolean
      */
+    @Deprecated
     public static boolean isPlayerWearingPartialSet(PlayerEntity player, @Nonnull IArmorMaterial material,
             @Nonnull Iterable<EquipmentSlotType> slot_list)
     {
@@ -42,31 +44,4 @@ public final class ModUtil
         return true;
     } // end ()
 
-    /**
-     * Is player wearing a full set of the same armor material?
-     * 
-     * @return boolean
-     */
-    public static boolean isPlayerWearingFullSet(PlayerEntity player, @Nonnull IArmorMaterial material)
-    {
-        Iterable<ItemStack> armorList = player.getArmorSlots();
-        for (ItemStack stack : armorList)
-        {
-            if (stack.isEmpty())
-            {
-                return false;
-            }
-            if (!(stack.getItem() instanceof ArmorItem))
-            {
-                return false;
-            }
-            ArmorItem piece = (ArmorItem) stack.getItem();
-            IArmorMaterial pieceMaterial = piece.getMaterial();
-            if (pieceMaterial != material)
-            {
-                return false;
-            }
-        } // end-for
-        return true;
-    } // end isPlayerWearingFullSet()
 } // end class ModUtil

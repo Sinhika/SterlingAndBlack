@@ -2,7 +2,7 @@ package mod.akkamaddi.sterlingblack.content;
 
 import java.util.List;
 
-import mod.akkamaddi.sterlingblack.ModUtil;
+import mod.alexndr.simplecorelib.helpers.ArmorUtils;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -28,7 +28,7 @@ public class BlackSilverArmorItem extends ArmorItem
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
     {
         super.onArmorTick(stack, world, player);
-        if (ModUtil.isPlayerWearingFullSet(player, getMaterial()))
+        if (ArmorUtils.isPlayerWearingFullSet(player, getMaterial()))
         {
             player.addEffect(new EffectInstance(Effects.DIG_SPEED, 2, mining_boost, false, false));
         }
