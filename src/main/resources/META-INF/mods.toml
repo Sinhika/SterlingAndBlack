@@ -10,7 +10,7 @@ license="LGPL 3"
 [[mods]]
 modId="sterlingblack"
 version="${file.jarVersion}"
-displayName="Sterling and Black"
+displayName="akkamaddi's Sterling and Black"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.16/update.json"
 displayURL="CurseForge URL"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
