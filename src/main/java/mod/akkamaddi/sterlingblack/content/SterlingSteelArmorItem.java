@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.google.common.collect.ImmutableList;
 
-import mod.akkamaddi.sterlingblack.ModUtil;
+import mod.alexndr.simplecorelib.helpers.ArmorUtils;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -47,11 +47,11 @@ public class SterlingSteelArmorItem extends ArmorItem
     {
         super.onArmorTick(stack, world, player);
         
-        if (ModUtil.isPlayerWearingPartialSet(player, getMaterial(), jump_list ))
+        if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), jump_list ))
         {
             player.addEffect(new EffectInstance(Effects.JUMP, 2, jumpBoostFactor, false, false));
         }
-        if (ModUtil.isPlayerWearingPartialSet(player, getMaterial(), move_list ))
+        if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), move_list ))
         {
             player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 2, moveSpeedFactor, false, false));
         }
