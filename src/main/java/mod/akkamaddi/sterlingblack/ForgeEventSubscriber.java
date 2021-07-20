@@ -17,9 +17,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 @EventBusSubscriber(modid = SterlingAndBlack.MODID, bus = EventBusSubscriber.Bus.FORGE)
 public final class ForgeEventSubscriber
 {
-        @SuppressWarnings("unused")
-        private static final Logger LOGGER = LogManager.getLogger(SterlingAndBlack.MODID + " Forge Event Subscriber");
-        private static final SterlingBlackInjectionLookup lootLookupMap = new SterlingBlackInjectionLookup();
+    @SuppressWarnings("unused")
+    private static final Logger LOGGER = LogManager.getLogger(SterlingAndBlack.MODID + " Forge Event Subscriber");
+    private static final SterlingBlackInjectionLookup lootLookupMap = new SterlingBlackInjectionLookup();
         
     /**
      * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which
