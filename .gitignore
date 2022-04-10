@@ -2,9 +2,6 @@
 /.gradle
 /build
 /run
-gradlew
-gradle/
-gradlew.bat
 bin/
 build.number
 /*/.cache
