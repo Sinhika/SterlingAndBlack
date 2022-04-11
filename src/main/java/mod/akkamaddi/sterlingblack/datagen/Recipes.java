@@ -9,13 +9,13 @@ import mod.akkamaddi.sterlingblack.init.ModItems;
 import mod.akkamaddi.sterlingblack.init.ModTags;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -35,7 +35,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         setbuilder = new RecipeSetBuilder(SterlingAndBlack.MODID);
     }
 
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void buildShapelessRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -44,7 +44,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         registerFurnaceRecipes(consumer);
     } // end registerRecipes() 
     
-    protected void registerToolRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerToolRecipes(Consumer<FinishedRecipe> consumer)
     {
         // STERLING_STEEL
         setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModTags.Items.INGOTS_STERLING_STEEL), "sterling_steel", 
@@ -55,7 +55,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 has(ModTags.Items.INGOTS_BLACK_SILVER), null, false);            
    } // end registerToolRecipes()
     
-    protected void registerArmorRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerArmorRecipes(Consumer<FinishedRecipe> consumer)
     {
         // STERLING_STEEL
         setbuilder.buildSimpleArmorSet(consumer, Ingredient.of(ModTags.Items.INGOTS_STERLING_STEEL), "sterling_steel", 
@@ -67,7 +67,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         
     } // end registerArmorRecipes()
     
-    protected void registerStorageRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerStorageRecipes(Consumer<FinishedRecipe> consumer)
     {
         // STERLING_STEEL
         setbuilder.buildSimpleStorageRecipes(consumer, ModItems.sterling_steel_ingot.get(), ModBlocks.sterling_steel_block.get(), 
@@ -86,7 +86,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 has(ModItems.black_silver_nugget.get()));
     } // end registerStorageRecipes()
     
-    protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
     {
         // rails
         ShapedRecipeBuilder.shaped(Blocks.RAIL.asItem(), 24)
@@ -99,7 +99,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 .save(consumer, new ResourceLocation(SterlingAndBlack.MODID, "rails_with_sterling_silver"));
     } // end registerMiscRecipes()
 
-    protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerFurnaceRecipes(Consumer<FinishedRecipe> consumer)
     {
         // Chunk to ingot
         setbuilder.buildOre2IngotRecipes(consumer, Ingredient.of(ModItems.large_black_silver_chunk.get()),

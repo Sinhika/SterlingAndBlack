@@ -3,8 +3,8 @@ package mod.akkamaddi.sterlingblack.helpers;
 import java.util.function.Predicate;
 
 import mod.akkamaddi.sterlingblack.init.ModItems;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.RegistryObject;
 
 public class IsSterlingBlackItem implements Predicate<ItemStack>

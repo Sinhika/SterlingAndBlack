@@ -13,11 +13,11 @@ import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
 import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,14 +38,14 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
 
     
     @Override
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void buildShapelessRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerSterlingSteelRecipes(consumer);
         registerBlackSilverRecipes(consumer);
         registerSilverRecyclingRecipes(consumer);
     }
 
-    protected void registerSterlingSteelRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerSterlingSteelRecipes(Consumer<FinishedRecipe> consumer)
     {
         List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
         Ingredient[] catalysts = new Ingredient[3];
@@ -71,7 +71,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
                 flag("recycling_enabled"), "recycle_sterling_steel_items");
     } // end registerSterlingSteelRecipes.
 
-    protected void registerBlackSilverRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerBlackSilverRecipes(Consumer<FinishedRecipe> consumer)
     {
         List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
         Ingredient[] catalysts = new Ingredient[3];
@@ -101,7 +101,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
         return new ResourceLocation(OnlySilverContents.getModId(), path);
     }
     
-    protected void registerSilverRecyclingRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerSilverRecyclingRecipes(Consumer<FinishedRecipe> consumer)
     {
         if (OnlySilverContents.isModLoaded()) 
         {

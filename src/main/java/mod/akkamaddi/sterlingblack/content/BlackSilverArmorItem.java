@@ -3,42 +3,44 @@ package mod.akkamaddi.sterlingblack.content;
 import java.util.List;
 
 import mod.alexndr.simplecorelib.helpers.ArmorUtils;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class BlackSilverArmorItem extends ArmorItem
 {
     protected static int mining_boost = 1;
     
-    public BlackSilverArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder)
+    public BlackSilverArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
+    public void onArmorTick(ItemStack stack, Level world, Player player)
     {
         super.onArmorTick(stack, world, player);
         if (ArmorUtils.isPlayerWearingFullSet(player, getMaterial()))
         {
-            player.addEffect(new EffectInstance(Effects.DIG_SPEED, 2, mining_boost, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 2, mining_boost, false, false));
         }
     } // end onArmorTick()
 
     @Override
-    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("sterlingblack.blacksilver_armor.info"));
+        tooltip.add(new TranslatableComponent("sterlingblack.blacksilver_armor.info"));
     }
 
     

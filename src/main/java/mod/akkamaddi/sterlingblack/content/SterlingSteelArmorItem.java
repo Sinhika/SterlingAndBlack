@@ -5,55 +5,57 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 
 import mod.alexndr.simplecorelib.helpers.ArmorUtils;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+import net.minecraft.world.item.Item.Properties;
+
 public class SterlingSteelArmorItem extends ArmorItem
 {
-    private static final ImmutableList<EquipmentSlotType> jump_list = 
-            ImmutableList.of(EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.FEET);
-    private static final ImmutableList<EquipmentSlotType> move_list = 
-            ImmutableList.of(EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.HEAD);
+    private static final ImmutableList<EquipmentSlot> jump_list = 
+            ImmutableList.of(EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET);
+    private static final ImmutableList<EquipmentSlot> move_list = 
+            ImmutableList.of(EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.HEAD);
     
     protected static int jumpBoostFactor = 1;
     protected static int moveSpeedFactor = 1;
     
-    public SterlingSteelArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder)
+    public SterlingSteelArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("sterlingblack.sterlingsteel_armor.info"));
+        tooltip.add(new TranslatableComponent("sterlingblack.sterlingsteel_armor.info"));
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
+    public void onArmorTick(ItemStack stack, Level world, Player player)
     {
         super.onArmorTick(stack, world, player);
         
         if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), jump_list ))
         {
-            player.addEffect(new EffectInstance(Effects.JUMP, 2, jumpBoostFactor, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 2, jumpBoostFactor, false, false));
         }
         if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), move_list ))
         {
-            player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 2, moveSpeedFactor, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2, moveSpeedFactor, false, false));
         }
     } // onArmorTick()
 
