@@ -1,17 +1,16 @@
 package mod.akkamaddi.sterlingblack.content;
 
-import net.minecraft.world.entity.EquipmentSlot;
+import java.util.function.Supplier;
 
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadedValue;
+import mod.akkamaddi.sterlingblack.init.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import java.util.function.Supplier;
-import mod.akkamaddi.sterlingblack.init.ModItems;
+import net.minecraftforge.common.util.Lazy;
 
 public enum SterlingBlackArmorMaterial implements ArmorMaterial
 {
@@ -29,7 +28,7 @@ public enum SterlingBlackArmorMaterial implements ArmorMaterial
     private final int enchantability;
     private final SoundEvent soundEvent;
     private final float toughness;
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Lazy<Ingredient> repairMaterial;
 
     private SterlingBlackArmorMaterial(String nameIn, int maxDamageIn, int[] drAmtArray,
                                     int enchantabilityIn, SoundEvent soundIn,
@@ -42,7 +41,7 @@ public enum SterlingBlackArmorMaterial implements ArmorMaterial
         enchantability = enchantabilityIn;
         soundEvent = soundIn;
         toughness = toughnessIn;
-        repairMaterial = new LazyLoadedValue<>(repairMatIn);
+        repairMaterial = Lazy.of(repairMatIn);
     } // end ctor()
 
     @Override

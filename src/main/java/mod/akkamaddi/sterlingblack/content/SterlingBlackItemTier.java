@@ -7,6 +7,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadedValue;
 
+// TODO redo this for 1.18.1 Tiers classes.
 public enum SterlingBlackItemTier implements Tier
 {
    STERLING_STEEL(3, 660, 10.0F, 2.0F, 26, ()->{ return Ingredient.of( ModItems.sterling_steel_ingot.get()); }),

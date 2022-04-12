@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 import mod.akkamaddi.sterlingblack.init.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 public class IsSterlingBlackItem implements Predicate<ItemStack>
 {

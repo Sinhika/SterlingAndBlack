@@ -6,10 +6,9 @@ import mod.alexndr.simplecorelib.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 /**
  * Holds a list of all our {@link Block}s.
@@ -31,11 +30,11 @@ public final class ModBlocks
     public static final RegistryObject<SterlingSteelBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",
             () -> new SterlingSteelBlock(Block.Properties.of(Material.METAL)
                     .strength(7.0F, 12.0F)
-                    .lightLevel(LightUtils.setFixedLight(SterlingSteelBlock.sterlingSteelLightLevel))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+                    .lightLevel(LightUtils.setFixedLight(SterlingSteelBlock.sterlingSteelLightLevel)).requiresCorrectToolForDrops()));
+                    //.harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<Block> black_silver_block = BLOCKS.register("black_silver_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK)
-                    .strength(12.0F, 26.0F)
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+                    .strength(12.0F, 26.0F).requiresCorrectToolForDrops()));
+                    //.harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 
 }  // end class ModBlocks
