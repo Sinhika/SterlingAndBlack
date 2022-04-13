@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-  	"#forge:storage_blocks/sterling_steel",
-  	"#forge:storage_blocks/black_silver"
-   ]
-}

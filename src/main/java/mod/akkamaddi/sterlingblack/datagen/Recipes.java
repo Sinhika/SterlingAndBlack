@@ -97,7 +97,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 .pattern("XYX")
                 .pattern("X X")
                 .unlockedBy("hasItem", has(ModItems.sterling_steel_ingot.get()))
-                .save(consumer, new ResourceLocation(SterlingAndBlack.MODID, "rails_with_sterling_silver"));
+                .save(consumer, new ResourceLocation(SterlingAndBlack.MODID, "rails_with_sterling_steel"));
     } // end registerMiscRecipes()
 
     protected void registerFurnaceRecipes(Consumer<FinishedRecipe> consumer)

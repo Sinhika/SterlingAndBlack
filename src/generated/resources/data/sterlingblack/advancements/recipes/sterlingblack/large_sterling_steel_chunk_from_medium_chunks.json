@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "sterlingblack:sterling_steel_nugget"
+            "items": [
+              "sterlingblack:sterling_steel_nugget"
+            ]
           }
         ]
       }
