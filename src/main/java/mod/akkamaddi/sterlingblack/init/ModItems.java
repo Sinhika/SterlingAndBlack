@@ -3,7 +3,7 @@ package mod.akkamaddi.sterlingblack.init;
 import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.akkamaddi.sterlingblack.content.BlackSilverArmorItem;
 import mod.akkamaddi.sterlingblack.content.SterlingBlackArmorMaterial;
-import mod.akkamaddi.sterlingblack.content.SterlingBlackItemTier;
+import mod.akkamaddi.sterlingblack.content.SterlingBlackItemTiers;
 import mod.akkamaddi.sterlingblack.content.SterlingSteelArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.AxeItem;
@@ -59,42 +59,42 @@ public final class ModItems
 
     // swords
     public static final RegistryObject<SwordItem> sterling_steel_sword = ITEMS.register("sterling_steel_sword",
-            () -> new SwordItem(SterlingBlackItemTier.STERLING_STEEL, 3, -2.4F,
+            () -> new SwordItem(SterlingBlackItemTiers.STERLING_STEEL, 3, -2.4F,
                                 new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SwordItem> black_silver_sword = ITEMS.register("black_silver_sword",
-            () -> new SwordItem(SterlingBlackItemTier.BLACK_SILVER, 3, -2.4F,
+            () -> new SwordItem(SterlingBlackItemTiers.BLACK_SILVER, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // pickaxes
     public static final RegistryObject<PickaxeItem> sterling_steel_pickaxe = ITEMS.register("sterling_steel_pickaxe",
-            () -> new PickaxeItem(SterlingBlackItemTier.STERLING_STEEL, 1, -2.8F,
+            () -> new PickaxeItem(SterlingBlackItemTiers.STERLING_STEEL, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> black_silver_pickaxe = ITEMS.register("black_silver_pickaxe",
-            () -> new PickaxeItem(SterlingBlackItemTier.BLACK_SILVER, 1, -2.8F,
+            () -> new PickaxeItem(SterlingBlackItemTiers.BLACK_SILVER, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // axes
     public static final RegistryObject<AxeItem> sterling_steel_axe = ITEMS.register("sterling_steel_axe",
-            () -> new AxeItem(SterlingBlackItemTier.STERLING_STEEL, 7.0F, -3.1F,
+            () -> new AxeItem(SterlingBlackItemTiers.STERLING_STEEL, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> black_silver_axe = ITEMS.register("black_silver_axe",
-            () -> new AxeItem(SterlingBlackItemTier.BLACK_SILVER, 6.0F, -3.0F,
+            () -> new AxeItem(SterlingBlackItemTiers.BLACK_SILVER, 6.0F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shovels
     public static final RegistryObject<ShovelItem> sterling_steel_shovel = ITEMS.register("sterling_steel_shovel",
-            () -> new ShovelItem(SterlingBlackItemTier.STERLING_STEEL, 1.5F, -3.0F,
+            () -> new ShovelItem(SterlingBlackItemTiers.STERLING_STEEL, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> black_silver_shovel = ITEMS.register("black_silver_shovel",
-            () -> new ShovelItem(SterlingBlackItemTier.BLACK_SILVER, 1.5F, -3.0F,
+            () -> new ShovelItem(SterlingBlackItemTiers.BLACK_SILVER, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // hoes
     public static final RegistryObject<HoeItem> sterling_steel_hoe = ITEMS.register("sterling_steel_hoe",
-            () -> new HoeItem(SterlingBlackItemTier.STERLING_STEEL, -2, -2.0F,
+            () -> new HoeItem(SterlingBlackItemTiers.STERLING_STEEL, -2, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> black_silver_hoe = ITEMS.register("black_silver_hoe",
-            () -> new HoeItem(SterlingBlackItemTier.BLACK_SILVER, -5, -3.0F,
+            () -> new HoeItem(SterlingBlackItemTiers.BLACK_SILVER, -5, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // ARMOR
