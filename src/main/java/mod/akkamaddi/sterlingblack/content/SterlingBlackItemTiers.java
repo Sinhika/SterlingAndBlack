@@ -6,7 +6,7 @@ import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.akkamaddi.sterlingblack.init.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -17,10 +17,10 @@ import net.minecraftforge.common.TierSortingRegistry;
 // TODO redo this for 1.18.1 Tiers classes.
 public class SterlingBlackItemTiers
 {
-    public static final Tag.Named<Block> STERLING_STEEL_TAG = 
-            BlockTags.createOptional(new ResourceLocation(SterlingAndBlack.MODID, "needs_sterling_steel_tool"));
-    public static final Tag.Named<Block> BLACK_SILVER_TAG = 
-            BlockTags.createOptional(new ResourceLocation(SterlingAndBlack.MODID, "needs_black_silver_tool"));
+    public static final TagKey<Block> STERLING_STEEL_TAG = 
+            BlockTags.create(new ResourceLocation(SterlingAndBlack.MODID, "needs_sterling_steel_tool"));
+    public static final TagKey<Block> BLACK_SILVER_TAG = 
+            BlockTags.create(new ResourceLocation(SterlingAndBlack.MODID, "needs_black_silver_tool"));
     
     public static final Tier  STERLING_STEEL = TierSortingRegistry.registerTier(
             new ForgeTier(Tiers.IRON.getLevel(), 660, 10.0F, 2.0F, 26, STERLING_STEEL_TAG, 

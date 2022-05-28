@@ -1,6 +1,6 @@
 package mod.akkamaddi.sterlingblack.loot;
 
-import mod.alexndr.simplecorelib.helpers.InjectionTableLookup;
+import mod.alexndr.simplecorelib.api.helpers.InjectionTableLookup;
 
 @SuppressWarnings("serial")
 public class SterlingBlackInjectionLookup extends InjectionTableLookup

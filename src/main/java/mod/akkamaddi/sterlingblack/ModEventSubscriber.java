@@ -14,7 +14,7 @@ import mod.akkamaddi.sterlingblack.helpers.IsSterlingBlackItem;
 import mod.akkamaddi.sterlingblack.helpers.OnlySilverContents;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.akkamaddi.sterlingblack.init.ModTabGroups;
-import mod.alexndr.simplecorelib.config.FlagCondition;
+import mod.alexndr.simplecorelib.api.config.FlagCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

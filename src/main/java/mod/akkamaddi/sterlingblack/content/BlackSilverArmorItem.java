@@ -2,7 +2,7 @@ package mod.akkamaddi.sterlingblack.content;
 
 import java.util.List;
 
-import mod.alexndr.simplecorelib.helpers.ArmorUtils;
+import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffectInstance;

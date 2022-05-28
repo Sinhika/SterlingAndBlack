@@ -1,6 +1,6 @@
 package mod.akkamaddi.sterlingblack.config;
 
-import mod.alexndr.simplecorelib.config.SimpleConfig;
+import mod.alexndr.simplecorelib.api.config.SimpleConfig;
 
 public class SterlingBlackConfig extends SimpleConfig
 {

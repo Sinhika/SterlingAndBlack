@@ -2,7 +2,7 @@ package mod.akkamaddi.sterlingblack.init;
 
 import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.akkamaddi.sterlingblack.content.SterlingSteelBlock;
-import mod.alexndr.simplecorelib.helpers.LightUtils;
+import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
