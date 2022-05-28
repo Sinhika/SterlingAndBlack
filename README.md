@@ -8,6 +8,8 @@ TODO List
 - Add dust & ore chunk textures.
 - Add dust & ore chunk items.
 - Add shears for all metals.
+- add Aesthetic blocks
+- add pressure plates
 - Add Silent Mechanisms support.
 - Add Silent Gear support.
 - Make a better CurseForge logo.
