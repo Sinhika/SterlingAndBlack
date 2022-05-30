@@ -26,8 +26,8 @@ public class SterlingSteelArmorItem extends ArmorItem
     private static final ImmutableList<EquipmentSlot> move_list = 
             ImmutableList.of(EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.HEAD);
     
-    protected static int jumpBoostFactor = 1;
-    protected static int moveSpeedFactor = 1;
+    protected static int jumpBoostFactor = 0;
+    protected static int moveSpeedFactor = 0;
     
     public SterlingSteelArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
     {
@@ -49,11 +49,11 @@ public class SterlingSteelArmorItem extends ArmorItem
         
         if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), jump_list ))
         {
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 1, jumpBoostFactor, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 2, jumpBoostFactor, false, false));
         }
         if (ArmorUtils.isPlayerWearingPartialSet(player, getMaterial(), move_list ))
         {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1, moveSpeedFactor, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2, moveSpeedFactor, false, false));
         }
     } // onArmorTick()
 
