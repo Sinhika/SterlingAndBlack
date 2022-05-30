@@ -30,7 +30,7 @@ public class BlackSilverArmorItem extends ArmorItem
         super.onArmorTick(stack, world, player);
         if (ArmorUtils.isPlayerWearingFullSet(player, getMaterial()))
         {
-            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 2, mining_boost, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1, mining_boost, false, false));
         }
     } // end onArmorTick()
 
