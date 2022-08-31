@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SSS",
-    "S S",
-    "S S"
-  ],
   "key": {
     "S": {
       "tag": "forge:ingots/black_silver"
     }
   },
+  "pattern": [
+    "SSS",
+    "S S",
+    "S S"
+  ],
   "result": {
     "item": "sterlingblack:black_silver_leggings"
   }

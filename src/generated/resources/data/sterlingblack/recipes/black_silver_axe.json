@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SS ",
-    "ST ",
-    " T "
-  ],
   "key": {
     "S": {
       "tag": "forge:ingots/black_silver"
@@ -13,6 +8,11 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    "SS ",
+    "ST ",
+    " T "
+  ],
   "result": {
     "item": "sterlingblack:black_silver_axe"
   }

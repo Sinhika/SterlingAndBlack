@@ -6,7 +6,6 @@ import com.google.common.collect.ImmutableList;
 
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,8 +17,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import net.minecraft.world.item.Item.Properties;
 
 public class SterlingSteelArmorItem extends ArmorItem
 {
@@ -41,7 +38,7 @@ public class SterlingSteelArmorItem extends ArmorItem
     public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslatableComponent("sterlingblack.sterlingsteel_armor.info"));
+        tooltip.add(Component.translatable("sterlingblack.sterlingsteel_armor.info"));
     }
 
     @Override

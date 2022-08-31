@@ -1,5 +1,10 @@
 {
   "type": "fusion:alloying",
+  "catalyst": {
+    "item": "sterlingblack:sterling_steel_nugget"
+  },
+  "cookingtime": 600,
+  "experience": 9.0,
   "inputs": [
     {
       "tag": "forge:ingots/silver"
@@ -8,12 +13,7 @@
       "tag": "forge:gems/onyx"
     }
   ],
-  "catalyst": {
-    "item": "sterlingblack:sterling_steel_nugget"
-  },
   "output": {
     "item": "sterlingblack:black_silver_nugget"
-  },
-  "cookingtime": 600,
-  "experience": 9.0
+  }
 }

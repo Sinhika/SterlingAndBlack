@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.4,
   "ingredient": [
     {
       "item": "sterlingblack:black_silver_axe"
@@ -29,7 +31,5 @@
       "item": "sterlingblack:black_silver_sword"
     }
   ],
-  "result": "sterlingblack:black_silver_nugget",
-  "experience": 0.4,
-  "cookingtime": 200
+  "result": "sterlingblack:black_silver_nugget"
 }

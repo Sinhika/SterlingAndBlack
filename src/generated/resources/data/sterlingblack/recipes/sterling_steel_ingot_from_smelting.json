@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 6.0,
   "ingredient": {
     "item": "sterlingblack:large_sterling_steel_chunk"
   },
-  "result": "sterlingblack:sterling_steel_ingot",
-  "experience": 6.0,
-  "cookingtime": 200
+  "result": "sterlingblack:sterling_steel_ingot"
 }

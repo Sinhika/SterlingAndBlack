@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 9.0,
   "ingredient": {
     "item": "sterlingblack:large_black_silver_chunk"
   },
-  "result": "sterlingblack:black_silver_ingot",
-  "experience": 9.0,
-  "cookingtime": 100
+  "result": "sterlingblack:black_silver_ingot"
 }

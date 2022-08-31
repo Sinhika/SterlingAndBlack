@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "recycling_enabled",
-          "type": "sterlingblack:flag"
+          "type": "sterlingblack:flag",
+          "flag": "recycling_enabled"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "cookingtime": 600,
+        "experience": 30.0,
         "inputs": [
           [
             {
@@ -23,15 +28,10 @@
             "item": "minecraft:gravel"
           }
         ],
-        "catalyst": {
-          "tag": "minecraft:coals"
-        },
         "output": {
-          "item": "sterlingblack:large_sterling_steel_chunk",
-          "count": 2
-        },
-        "cookingtime": 600,
-        "experience": 30.0
+          "count": 2,
+          "item": "sterlingblack:large_sterling_steel_chunk"
+        }
       }
     }
   ]

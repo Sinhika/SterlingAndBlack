@@ -1,5 +1,10 @@
 {
   "type": "fusion:alloying",
+  "catalyst": {
+    "item": "sterlingblack:large_sterling_steel_chunk"
+  },
+  "cookingtime": 600,
+  "experience": 36.0,
   "inputs": [
     {
       "tag": "forge:ingots/silver"
@@ -8,12 +13,7 @@
       "tag": "forge:gems/onyx"
     }
   ],
-  "catalyst": {
-    "item": "sterlingblack:large_sterling_steel_chunk"
-  },
   "output": {
     "item": "sterlingblack:large_black_silver_chunk"
-  },
-  "cookingtime": 600,
-  "experience": 36.0
+  }
 }

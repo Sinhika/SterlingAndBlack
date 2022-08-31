@@ -4,21 +4,26 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "flag": "silver_recycling_enabled",
-              "type": "sterlingblack:flag"
+              "type": "sterlingblack:flag",
+              "flag": "silver_recycling_enabled"
             },
             {
-              "modid": "onlysilver",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "onlysilver"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "cookingtime": 600,
+        "experience": 10.0,
         "inputs": [
           [
             {
@@ -56,14 +61,9 @@
             "item": "minecraft:gravel"
           }
         ],
-        "catalyst": {
-          "tag": "minecraft:coals"
-        },
         "output": {
           "item": "onlysilver:silver_ore"
-        },
-        "cookingtime": 600,
-        "experience": 10.0
+        }
       }
     }
   ]
