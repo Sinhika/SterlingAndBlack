@@ -9,6 +9,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class SterlingSteelBlock extends Block
 {
     public static final int sterlingSteelLightLevel = (int) (0.8F * 15.0F);
