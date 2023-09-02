@@ -1,12 +1,15 @@
 package mod.akkamaddi.sterlingblack.datagen;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.akkamaddi.sterlingblack.init.ModBlocks;
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -15,15 +18,16 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlockTags extends MiningBlockTags
 {
 
-    public ModBlockTags(DataGenerator gen, ExistingFileHelper existingFileHelper)
+    public ModBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			ExistingFileHelper existingFileHelper)
     {
-        super(gen, SterlingAndBlack.MODID, existingFileHelper);
+        super(output, lookupProvider, SterlingAndBlack.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags()
+    protected void addTags(Provider pProvider)
     {
-        super.addTags();
+        super.addTags(pProvider);
         registerStorageBlockTags();
         registerBeaconBlockTags();
     }
@@ -66,5 +70,11 @@ public class ModBlockTags extends MiningBlockTags
                 List.of(ModBlocks.black_silver_block.get()), // 3 - diamond
                 List.of()); // 4 - netherite
     } // registerMiningTags()
+
+	@Override
+	protected void registerOreTags() {
+		// TODO Auto-generated method stub
+		
+	}
 
 } // end class

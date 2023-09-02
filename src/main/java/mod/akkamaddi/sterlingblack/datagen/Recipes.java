@@ -9,8 +9,9 @@ import mod.akkamaddi.sterlingblack.init.ModItems;
 import mod.akkamaddi.sterlingblack.init.ModTags;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -29,14 +30,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 {
     private RecipeSetBuilder setbuilder;
 
-    public Recipes(DataGenerator generatorIn)
+    public Recipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         setbuilder = new RecipeSetBuilder(SterlingAndBlack.MODID);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -90,7 +91,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
     protected void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
     {
         // rails
-        ShapedRecipeBuilder.shaped(Blocks.RAIL.asItem(), 24)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, Blocks.RAIL.asItem(), 24)
                 .define('X', Ingredient.of(ModItems.sterling_steel_ingot.get()))
                 .define('Y', Ingredient.of(Tags.Items.RODS_WOODEN))
                 .pattern("X X")

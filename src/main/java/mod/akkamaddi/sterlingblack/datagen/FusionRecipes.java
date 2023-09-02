@@ -9,10 +9,10 @@ import mod.akkamaddi.sterlingblack.config.SterlingBlackConfig;
 import mod.akkamaddi.sterlingblack.helpers.OnlySilverContents;
 import mod.akkamaddi.sterlingblack.init.ModItems;
 import mod.akkamaddi.sterlingblack.init.ModTags;
+import mod.alexndr.fusion.api.datagen.AbstractFusionRecipeProvider;
 import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
-import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -25,20 +25,19 @@ import net.minecraftforge.registries.ForgeRegistries;
 /**
  * Fusion RecipeProvider for Fusion
  */
-public class FusionRecipes extends AbstractFusionRecipeProvider
-        implements IConditionBuilder, ISimpleConditionBuilder
+public class FusionRecipes extends AbstractFusionRecipeProvider implements IConditionBuilder, ISimpleConditionBuilder
 {
     private FusionRecipeSetBuilder fusionbuilder;
 
-    public FusionRecipes(DataGenerator generatorIn)
+    public FusionRecipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         fusionbuilder = new FusionRecipeSetBuilder(SterlingAndBlack.MODID);
     }
 
     
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerSterlingSteelRecipes(consumer);
         registerBlackSilverRecipes(consumer);
