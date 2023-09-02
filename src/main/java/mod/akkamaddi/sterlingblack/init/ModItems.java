@@ -5,7 +5,7 @@ import mod.akkamaddi.sterlingblack.content.BlackSilverArmorItem;
 import mod.akkamaddi.sterlingblack.content.SterlingBlackArmorMaterial;
 import mod.akkamaddi.sterlingblack.content.SterlingBlackItemTiers;
 import mod.akkamaddi.sterlingblack.content.SterlingSteelArmorItem;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
@@ -100,30 +100,30 @@ public final class ModItems
     // ARMOR
     // sterling_steel
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_helmet = ITEMS.register("sterling_steel_helmet",
-            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.HEAD,
+            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_leggings = ITEMS.register("sterling_steel_leggings",
-            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.LEGS,
+            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_chestplate = ITEMS.register("sterling_steel_chestplate",
-            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.CHEST,
+            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_boots = ITEMS.register("sterling_steel_boots",
-            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.FEET,
+            () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
     // black_silver
     public static final RegistryObject<BlackSilverArmorItem> black_silver_helmet = ITEMS.register("black_silver_helmet",
-            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.HEAD,
+            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_leggings = ITEMS.register("black_silver_leggings",
-            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.LEGS,
+            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_chestplate = ITEMS.register("black_silver_chestplate",
-            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.CHEST,
+            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_boots = ITEMS.register("black_silver_boots",
-            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.FEET,
+            () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
 } // end class

@@ -28,7 +28,7 @@ public class SterlingSteelArmorItem extends ArmorItem
     protected static int jumpBoostFactor = 0;
     protected static int moveSpeedFactor = 0;
     
-    public SterlingSteelArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
+    public SterlingSteelArmorItem(ArmorMaterial materialIn, Type slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }

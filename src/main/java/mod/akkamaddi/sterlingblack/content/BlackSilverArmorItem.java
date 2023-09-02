@@ -6,7 +6,6 @@ import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -18,7 +17,7 @@ public class BlackSilverArmorItem extends ArmorItem
 {
     protected static int mining_boost = 0;
     
-    public BlackSilverArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
+    public BlackSilverArmorItem(ArmorMaterial materialIn, Type slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }
