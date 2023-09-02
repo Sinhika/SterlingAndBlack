@@ -3,52 +3,59 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[41,)" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
 issueTrackerURL="https://github.com/Sinhika/SterlingAndBlack/issues"
-license="LGPL 3"
+license="${mod_license}"
 
 [[mods]]
-modId="sterlingblack"
-version="${file.jarVersion}"
-displayName="akkamaddi's Sterling and Black"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.19/update.json"
+modId="${mod_id}"
+version="${version}"
+displayName="${mod_name}"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/SterlingAndBlack/1.20/update.json"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/sterling-and-black"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
-authors="akkamaddi, Sinhika"
+authors="${mod_authors}"
 description='''Sterling Steel and Black Silver alloys to Zot's Only Silver. Simple Ores2:Fusion add-on
 '''
 
-[[dependencies.sterlingblack]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[41.1.0,44.0.0)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.sterlingblack]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.19.3)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.sterlingblack]]
+[[dependencies.${mod_id}]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.1,1.19.2-5.2.0.0)"
+    versionRange="${simplecore_range}"
     ordering="NONE"
     side="BOTH"    
 
-[[dependencies.sterlingblack]]
+[[dependencies.${mod_id}]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.0,1.19.2-5.2.0.0)"
+    versionRange="${fusion_range}"
     ordering="NONE"
     side="BOTH"    
 
-[[dependencies.sterlingblack]]
+[[dependencies.${mod_id}]]
+    modId="simpleores"
+    mandatory=false
+    versionRange="${simpleores_range}"
+    ordering="BEFORE"
+    side="BOTH"    
+
+[[dependencies.${mod_id}]]
     modId="onlysilver"
     mandatory=false
-    versionRange="[1.19.2-5.1.0.0,1.19.2-5.2.0.0)"
+    versionRange="${onlysilver_range}"
     ordering="BEFORE"
     side="BOTH"    
