@@ -42,5 +42,6 @@
         "min": 1.0
       }
     }
-  ]
+  ],
+  "random_sequence": "sterlingblack:inject/village_weaponsmith"
 }

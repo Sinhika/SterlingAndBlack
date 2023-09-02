@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "S": {
       "item": "sterlingblack:black_silver_nugget"
@@ -11,5 +12,6 @@
   ],
   "result": {
     "item": "sterlingblack:medium_black_silver_chunk"
-  }
+  },
+  "show_notification": true
 }

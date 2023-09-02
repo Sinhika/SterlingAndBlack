@@ -80,5 +80,6 @@
         "min": 1.0
       }
     }
-  ]
+  ],
+  "random_sequence": "sterlingblack:inject/simple_dungeon"
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "tag": "forge:ingots/black_silver"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "sterlingblack:black_silver_chestplate"
-  }
+  },
+  "show_notification": true
 }

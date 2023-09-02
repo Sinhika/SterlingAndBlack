@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "tag": "forge:ingots/sterling_steel"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "sterlingblack:sterling_steel_axe"
-  }
+  },
+  "show_notification": true
 }
