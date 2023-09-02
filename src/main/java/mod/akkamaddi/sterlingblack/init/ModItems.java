@@ -34,22 +34,22 @@ public final class ModItems
 
     // ingots and nuggets
     public static final RegistryObject<Item> sterling_steel_ingot = ITEMS.register("sterling_steel_ingot", 
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> sterling_steel_nugget = ITEMS.register("sterling_steel_nugget",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> medium_sterling_steel_chunk = ITEMS.register("medium_sterling_steel_chunk", 
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> large_sterling_steel_chunk = ITEMS.register("large_sterling_steel_chunk",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
    
     public static final RegistryObject<Item> black_silver_ingot = ITEMS.register("black_silver_ingot",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> black_silver_nugget = ITEMS.register("black_silver_nugget",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> medium_black_silver_chunk = ITEMS.register("medium_black_silver_chunk",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> large_black_silver_chunk = ITEMS.register("large_black_silver_chunk",
-            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+            ()-> new Item(new Item.Properties()));
 
     // parts
 
@@ -60,70 +60,70 @@ public final class ModItems
     // swords
     public static final RegistryObject<SwordItem> sterling_steel_sword = ITEMS.register("sterling_steel_sword",
             () -> new SwordItem(SterlingBlackItemTiers.STERLING_STEEL, 3, -2.4F,
-                                new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                                new Item.Properties()));
     public static final RegistryObject<SwordItem> black_silver_sword = ITEMS.register("black_silver_sword",
             () -> new SwordItem(SterlingBlackItemTiers.BLACK_SILVER, 3, -2.4F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // pickaxes
     public static final RegistryObject<PickaxeItem> sterling_steel_pickaxe = ITEMS.register("sterling_steel_pickaxe",
             () -> new PickaxeItem(SterlingBlackItemTiers.STERLING_STEEL, 1, -2.8F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<PickaxeItem> black_silver_pickaxe = ITEMS.register("black_silver_pickaxe",
             () -> new PickaxeItem(SterlingBlackItemTiers.BLACK_SILVER, 1, -2.8F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // axes
     public static final RegistryObject<AxeItem> sterling_steel_axe = ITEMS.register("sterling_steel_axe",
             () -> new AxeItem(SterlingBlackItemTiers.STERLING_STEEL, 7.0F, -3.1F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<AxeItem> black_silver_axe = ITEMS.register("black_silver_axe",
             () -> new AxeItem(SterlingBlackItemTiers.BLACK_SILVER, 6.0F, -3.0F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // shovels
     public static final RegistryObject<ShovelItem> sterling_steel_shovel = ITEMS.register("sterling_steel_shovel",
             () -> new ShovelItem(SterlingBlackItemTiers.STERLING_STEEL, 1.5F, -3.0F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<ShovelItem> black_silver_shovel = ITEMS.register("black_silver_shovel",
             () -> new ShovelItem(SterlingBlackItemTiers.BLACK_SILVER, 1.5F, -3.0F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // hoes
     public static final RegistryObject<HoeItem> sterling_steel_hoe = ITEMS.register("sterling_steel_hoe",
             () -> new HoeItem(SterlingBlackItemTiers.STERLING_STEEL, -2, -2.0F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<HoeItem> black_silver_hoe = ITEMS.register("black_silver_hoe",
             () -> new HoeItem(SterlingBlackItemTiers.BLACK_SILVER, -5, -3.0F,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // ARMOR
     // sterling_steel
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_helmet = ITEMS.register("sterling_steel_helmet",
             () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_leggings = ITEMS.register("sterling_steel_leggings",
             () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.LEGS,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_chestplate = ITEMS.register("sterling_steel_chestplate",
             () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.CHEST,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<SterlingSteelArmorItem> sterling_steel_boots = ITEMS.register("sterling_steel_boots",
             () -> new SterlingSteelArmorItem(SterlingBlackArmorMaterial.STERLING_STEEL, EquipmentSlot.FEET,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
     // black_silver
     public static final RegistryObject<BlackSilverArmorItem> black_silver_helmet = ITEMS.register("black_silver_helmet",
             () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_leggings = ITEMS.register("black_silver_leggings",
             () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.LEGS,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_chestplate = ITEMS.register("black_silver_chestplate",
             () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.CHEST,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
     public static final RegistryObject<BlackSilverArmorItem> black_silver_boots = ITEMS.register("black_silver_boots",
             () -> new BlackSilverArmorItem(SterlingBlackArmorMaterial.BLACK_SILVER, EquipmentSlot.FEET,
-                    new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+                    new Item.Properties()));
 
 } // end class

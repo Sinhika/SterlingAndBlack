@@ -4,8 +4,9 @@ import mod.akkamaddi.sterlingblack.SterlingAndBlack;
 import mod.akkamaddi.sterlingblack.content.SterlingSteelBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -28,12 +29,12 @@ public final class ModBlocks
 
     // Metal Blocks
     public static final RegistryObject<SterlingSteelBlock> sterling_steel_block = BLOCKS.register("sterling_steel_block",
-            () -> new SterlingSteelBlock(Block.Properties.of(Material.METAL)
-                    .strength(7.0F, 12.0F)
+            () -> new SterlingSteelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
+                    .strength(7.0F, 12.0F).sound(SoundType.METAL)
                     .lightLevel(LightUtils.setFixedLight(SterlingSteelBlock.sterlingSteelLightLevel)).requiresCorrectToolForDrops()));
                     //.harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<Block> black_silver_block = BLOCKS.register("black_silver_block",
-            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK)
+            () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.METAL)
                     .strength(12.0F, 26.0F).requiresCorrectToolForDrops()));
                     //.harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 
